@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-26T23:02:30 IST" name="Default suite" finished-at="2025-09-26T23:02:32 IST" duration-ms="2514">
+    <groups>
+    </groups>
+    <test started-at="2025-09-26T23:02:30 IST" name="Default test" finished-at="2025-09-26T23:02:32 IST" duration-ms="2514">
+      <class name="com.Inwarrenty.Test.InWarrentLoginAPITest">
+        <test-method signature="loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@201a4587]" started-at="2025-09-26T23:02:30 IST" name="loginApiTest" finished-at="2025-09-26T23:02:32 IST" duration-ms="2474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApiTest -->
+      </class> <!-- com.Inwarrenty.Test.InWarrentLoginAPITest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
