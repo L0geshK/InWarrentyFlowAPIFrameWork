@@ -39,18 +39,12 @@ public class AuthTokenProvider {
 		
 		try {
 			token = given()
-				      .baseUri(getProperty("BASE_URL"))
-				      .and().contentType(ContentType.JSON)
-				      .and().accept(ContentType.ANY)
-				      .log().uri().log().method()
-				      .body(userCredentials)
-				      .log().body()
+					.spec(SpecUtils.getRequestSpec(userCredentials))
 				      
 				.when()
 				      .post("/login")
 				.then()
-				      .statusCode(200)
-				      .time(lessThan(1000L))
+				 .spec(SpecUtils.getResponceSpec())
 				      .body("message", equalTo("Success"))
 				      .body("data.token", notNullValue())
 				      .extract()

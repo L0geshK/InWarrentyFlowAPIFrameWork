@@ -8,6 +8,8 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Roles;
+import com.Inwarrenty.Utils.SpecUtils;
+
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
@@ -25,16 +27,11 @@ public class InWarrentyMasterAPIRequestTest {
 	public void masterAPI() {
 		try {
 			given()
-			  .baseUri(getProperty("BASE_URL"))
-			  .and().contentType("")
-			  .log().uri().log().method().log().body()
-			  .header("Authorization",getToken(Roles.FD))
-			  .log().headers()
+			.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD))
   .when()
 			.post("/master")
   .then()
-			.statusCode(200)
-			.time(lessThan(1000L))
+			.spec(SpecUtils.responseSpec_OK())
 			.body("message",  equalToIgnoringCase("Success"))
 			.body("data", notNullValue())
 			.body("data", hasKey("mst_oem"))
@@ -76,9 +73,12 @@ public class InWarrentyMasterAPIRequestTest {
 	@Test
 	public void masterAPI_missingAuthToken() {
 		try {
-			given().baseUri(getProperty("BASE_URL")).and().contentType(ContentType.JSON).and().accept(ContentType.ANY).header("Authorization","")
-					.log().uri().log().method().log().body().when().get("/master").then().statusCode(404)
-					.time(lessThan(1000L)).log().ifValidationFails();
+			given()
+			.spec(SpecUtils.getRequestSpec())					
+					.when().get("/master").then()
+					.spec(SpecUtils.responseSpec_TEXT(404));
+					
+					
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

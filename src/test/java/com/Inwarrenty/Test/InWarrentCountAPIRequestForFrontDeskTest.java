@@ -18,6 +18,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Roles;
+import com.Inwarrenty.Utils.SpecUtils;
 
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -28,9 +29,12 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 	public void getCountAPIFrontDesl() {
 
 		try {
-			given().baseUri(getProperty("BASE_URL")).and().contentType(ContentType.JSON).and().accept(ContentType.ANY)
-					.log().uri().log().method().log().body().header("Authorization", getToken(Roles.FD)).log().headers()
-					.when().get("/dashboard/count").then().statusCode(200).time(lessThan(1000L))
+			given()
+			.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD))
+					.when()
+					    .get("/dashboard/count")
+					.then()
+					.spec(SpecUtils.responseSpec_OK())
 					.body("message", equalToIgnoringCase("Success")).body("data", notNullValue())
 					.body("data.size()", equalTo(3)).body("data.count", everyItem(greaterThanOrEqualTo(0)))
 					.body("data.label", everyItem(not(blankOrNullString())))
@@ -50,9 +54,13 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 	@Test
 	public void countAPI_missingAuthToken() {
 		try {
-			given().baseUri(getProperty("BASE_URL")).and().contentType(ContentType.JSON).and().accept(ContentType.ANY)
-					.log().uri().log().method().log().body().when().get("/dashboard/count").then().statusCode(401)
-					.time(lessThan(1000L)).log().ifValidationFails();
+			given()
+			.spec(SpecUtils.getRequestSpec())
+					
+					.when().get("/dashboard/count")
+					.then()
+					.spec(SpecUtils.responseSpec_JSON(401));
+					
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
