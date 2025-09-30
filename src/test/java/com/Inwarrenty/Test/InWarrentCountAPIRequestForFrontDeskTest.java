@@ -59,7 +59,7 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 					
 					.when().get("/dashboard/count")
 					.then()
-					.spec(SpecUtils.responseSpec_JSON(401));
+					.spec(SpecUtils.responseSpec_TEXT(401));
 					
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
