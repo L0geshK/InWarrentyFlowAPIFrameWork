@@ -8,7 +8,8 @@ import static org.hamcrest.Matchers.lessThan;
 import java.io.IOException;
 
 import com.Inwarrenty.Constants.Roles;
-import com.Inwarrenty.POJO.UserCredentials;
+import com.Inwarrenty.request.model.UserCredentials;
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;

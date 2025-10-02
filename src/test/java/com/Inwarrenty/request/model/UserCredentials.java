@@ -1,4 +1,4 @@
-package com.Inwarrenty.POJO;
+package com.Inwarrenty.request.model;
 
 public record UserCredentials(String username, String password) {
 
