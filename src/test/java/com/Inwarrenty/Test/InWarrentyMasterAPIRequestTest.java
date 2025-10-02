@@ -23,7 +23,7 @@ public class InWarrentyMasterAPIRequestTest {
 	
 	
 	
-	@Test
+	@Test(description = "Verifying the Master api is giving correct responce",groups = {"api","regression","smoke"})
 	public void masterAPI() {
 		try {
 			given()
@@ -70,7 +70,7 @@ public class InWarrentyMasterAPIRequestTest {
 	}
 	
 	
-	@Test
+	@Test(description = "Verifying the Master api is giving correct status code for invalid token",groups = {"api","regression","smoke","negative"})
 	public void masterAPI_missingAuthToken() {
 		try {
 			given()
