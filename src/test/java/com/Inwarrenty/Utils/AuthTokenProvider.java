@@ -9,7 +9,8 @@ import static org.hamcrest.Matchers.notNullValue;
 import java.io.IOException;
 
 import com.Inwarrenty.Constants.Roles;
-import com.Inwarrenty.POJO.UserCredentials;
+import com.Inwarrenty.request.model.UserCredentials;
+
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 

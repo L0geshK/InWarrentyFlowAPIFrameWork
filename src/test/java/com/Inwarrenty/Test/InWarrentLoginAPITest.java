@@ -8,8 +8,8 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import com.Inwarrenty.POJO.UserCredentials;
 import com.Inwarrenty.Utils.SpecUtils;
+import com.Inwarrenty.request.model.UserCredentials;
 
 import static  com.Inwarrenty.Utils.ConfigManager.*;
 import io.restassured.http.ContentType;

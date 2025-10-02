@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest">
+      <class name="com.Inwarrenty.Test.InwarrentyCreateAPITest">
         <methods>
-          <include name="masterAPI_missingAuthToken"/>
+          <include name="createJobApi"/>
         </methods>
-      </class> <!-- com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest -->
+      </class> <!-- com.Inwarrenty.Test.InwarrentyCreateAPITest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
