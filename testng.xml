@@ -7,6 +7,7 @@
       <class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest"/>
       <class name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest"/>
       <class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest"/>
+      <class name="com.Inwarrenty.Test.InwarrentyCreateAPITest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
