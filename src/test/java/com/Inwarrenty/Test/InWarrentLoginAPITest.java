@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 import java.io.IOException;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Utils.SpecUtils;
@@ -17,27 +18,34 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InWarrentLoginAPITest {
 	
+	private UserCredentials userCredentials;
 	
-	@Test
+	
+	@BeforeMethod(description = "Create a Payload For Login API")
+	public void setup() {
+		 userCredentials = new UserCredentials("iamfd","password");
+		 
+	}
+	
+	
+	
+	@Test(description = "Verifying if login API is Working for FD User!!!", groups = {"api","Smoke","regression"})
 	public void loginApiTest() throws IOException {
 		
 		
-		UserCredentials userCredentials = new UserCredentials("iamfd","password");
-		 
+		
 		given()
 		      .spec(SpecUtils.getRequestSpec(userCredentials))
 		      
-		      .log().body()
-		      
+		     
 		.when()
 		      .post("/login")
 		.then()
 		      .spec(SpecUtils.getResponceSpec())
 		      .body("message", equalTo("Success"))
 		      .body("data.token", notNullValue())
-		      .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/LoginResponceSchema.json"))
-		      .log().body().and().log().status().log().all()
-		      .extract().response();
+		      .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/LoginResponceSchema.json"));
+		     
 
 		      
 		        

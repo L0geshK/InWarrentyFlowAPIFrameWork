@@ -25,7 +25,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InWarrentCountAPIRequestForFrontDeskTest {
 
-	@Test
+	@Test(description = "Verifying the Count  api is giving correct responce form the FrontDesk",groups = {"api","regression","smoke"})
 	public void getCountAPIFrontDesl() {
 
 		try {
@@ -51,7 +51,7 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 	}
 
 	
-	@Test
+	@Test(description = "Verifying the Count  api is giving correct status code for invalid token",groups = {"api","regression","smoke","negative"})
 	public void countAPI_missingAuthToken() {
 		try {
 			given()
