@@ -1,4 +1,4 @@
-package com.Inwarrenty.CSV;
+package com.Inwarrenty.dataproviderbean;
 
 public class UserPOJO {
 	private String username;
