@@ -1,30 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="1" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-02T22:26:21 IST" name="Default suite" finished-at="2025-10-02T22:26:24 IST" duration-ms="2344">
+  <suite started-at="2025-10-11T23:04:41 IST" name="Default suite" finished-at="2025-10-11T23:04:44 IST" duration-ms="2482">
     <groups>
+      <group name="datadriven">
+        <method signature="InWarrentLoginAPIDataProviderTest.loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
+      </group> <!-- datadriven -->
       <group name="regression">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPIDataProviderTest.loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
       </group> <!-- regression -->
       <group name="Smoke">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPIDataProviderTest.loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
       </group> <!-- Smoke -->
       <group name="api">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPIDataProviderTest.loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2025-10-02T22:26:21 IST" name="Default test" finished-at="2025-10-02T22:26:24 IST" duration-ms="2344">
-      <class name="com.Inwarrenty.Test.InWarrentLoginAPITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" started-at="2025-10-02T22:26:21 IST" name="setup" description="Create a Payload For Login API" finished-at="2025-10-02T22:26:21 IST" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" started-at="2025-10-02T22:26:21 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" finished-at="2025-10-02T22:26:24 IST" duration-ms="2296" status="PASS">
+    <test started-at="2025-10-11T23:04:41 IST" name="Default test" finished-at="2025-10-11T23:04:44 IST" duration-ms="2482">
+      <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest">
+        <test-method signature="loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" started-at="2025-10-11T23:04:42 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPITestData" finished-at="2025-10-11T23:04:44 IST" duration-ms="2319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserPOJO [username=iamfd, password=password]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginApiTest -->
-      </class> <!-- com.Inwarrenty.Test.InWarrentLoginAPITest -->
+        <test-method signature="loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" started-at="2025-10-11T23:04:42 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPITestData" finished-at="2025-10-11T23:04:43 IST" duration-ms="1625" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserPOJO [username=iameng, password=passowrd]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <500>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <500>.
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$10.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest.loginApiTest(InWarrentLoginAPIDataProviderTest.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApiTest -->
+        <test-method signature="loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" started-at="2025-10-11T23:04:42 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPITestData" finished-at="2025-10-11T23:04:43 IST" duration-ms="1625" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserPOJO [username=iamsup, password=passowrd]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <500>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <500>.
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$10.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest.loginApiTest(InWarrentLoginAPIDataProviderTest.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApiTest -->
+        <test-method signature="loginApiTest(com.Inwarrenty.dataproviderbean.UserPOJO)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest@61001b64]" started-at="2025-10-11T23:04:42 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPITestData" finished-at="2025-10-11T23:04:43 IST" duration-ms="1625" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserPOJO [username=logesh, password=12345]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <500>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <500>.
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$10.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest.loginApiTest(InWarrentLoginAPIDataProviderTest.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApiTest -->
+      </class> <!-- com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
