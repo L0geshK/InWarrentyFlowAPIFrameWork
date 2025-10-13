@@ -20,7 +20,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InWarrentLoginAPIDataProviderTest {
 	
-	private UserCredentials userCredentials;
+	
 	
 	
 	
