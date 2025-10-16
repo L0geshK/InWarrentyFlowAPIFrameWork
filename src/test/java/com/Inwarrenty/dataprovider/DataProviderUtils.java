@@ -12,7 +12,7 @@ public class DataProviderUtils {
 	
 	@DataProvider(name ="LoginAPITestData",parallel = true)
 	public static Iterator<UserPOJO> loginAPIDataProvider() {
-		return CSVReaderUtils.loadCSV("TestData/LoginCredentials.csv");
+		return CSVReaderUtils.loadCSV("TestData/LoginCredentials.csv",UserPOJO.class);
 	}
 
 }
