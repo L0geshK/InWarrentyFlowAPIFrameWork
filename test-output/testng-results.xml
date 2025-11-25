@@ -2,25 +2,25 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-02T22:26:21 IST" name="Default suite" finished-at="2025-10-02T22:26:24 IST" duration-ms="2344">
+  <suite started-at="2025-10-21T22:38:08 IST" name="Default suite" finished-at="2025-10-21T22:38:10 IST" duration-ms="2138">
     <groups>
       <group name="regression">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
       </group> <!-- regression -->
       <group name="Smoke">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
       </group> <!-- Smoke -->
       <group name="api">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2025-10-02T22:26:21 IST" name="Default test" finished-at="2025-10-02T22:26:24 IST" duration-ms="2344">
+    <test started-at="2025-10-21T22:38:08 IST" name="Default test" finished-at="2025-10-21T22:38:10 IST" duration-ms="2138">
       <class name="com.Inwarrenty.Test.InWarrentLoginAPITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" started-at="2025-10-02T22:26:21 IST" name="setup" description="Create a Payload For Login API" finished-at="2025-10-02T22:26:21 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" started-at="2025-10-21T22:38:08 IST" name="setup" description="Create a Payload For Login API" finished-at="2025-10-21T22:38:08 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@51e69659]" started-at="2025-10-02T22:26:21 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" finished-at="2025-10-02T22:26:24 IST" duration-ms="2296" status="PASS">
+        <test-method signature="loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" started-at="2025-10-21T22:38:08 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" finished-at="2025-10-21T22:38:10 IST" duration-ms="2091" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginApiTest -->
