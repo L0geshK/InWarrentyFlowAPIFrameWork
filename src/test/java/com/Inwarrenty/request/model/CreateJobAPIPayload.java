@@ -10,7 +10,7 @@ public record CreateJobAPIPayload (
 	 Customer customer,
 	 CustomerAddress customer_address,
 	 CustomerProduct customer_product,
-	  List<problems>problems)
+	  List<Problems>problems)
 
 {
 	

@@ -1,30 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-21T22:38:08 IST" name="Default suite" finished-at="2025-10-21T22:38:10 IST" duration-ms="2138">
+  <suite started-at="2025-11-26T22:45:37 IST" name="Default suite" finished-at="2025-11-26T22:45:41 IST" duration-ms="3658">
     <groups>
       <group name="regression">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InwarrentyCreateAPIDataProviderTest.createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" name="createJobApi" class="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
       </group> <!-- regression -->
-      <group name="Smoke">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
-      </group> <!-- Smoke -->
+      <group name="smoke">
+        <method signature="InwarrentyCreateAPIDataProviderTest.createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" name="createJobApi" class="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
+      </group> <!-- smoke -->
       <group name="api">
-        <method signature="InWarrentLoginAPITest.loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" name="loginApiTest" class="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
+        <method signature="InwarrentyCreateAPIDataProviderTest.createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" name="createJobApi" class="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2025-10-21T22:38:08 IST" name="Default test" finished-at="2025-10-21T22:38:10 IST" duration-ms="2138">
-      <class name="com.Inwarrenty.Test.InWarrentLoginAPITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" started-at="2025-10-21T22:38:08 IST" name="setup" description="Create a Payload For Login API" finished-at="2025-10-21T22:38:08 IST" duration-ms="6" status="PASS">
+    <test started-at="2025-11-26T22:45:37 IST" name="Default test" finished-at="2025-11-26T22:45:41 IST" duration-ms="3658">
+      <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest">
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3335" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Charak, last_name=Namboothiri, mobile_number=7034916614, mobile_number_alt=7016685706, email_id=kalyani.nayar@gmail.com, email_id_alt=deenabandhu.bhattathiri@gmail.com], customer_address=CustomerAddress[flat_number=002, apartment_name=Achari Causeway, street_name=Deenabandhu Spur, landmark=Kanti Rapid, area=Bhattathiri Park, pincode=40010, country=India, state=Tamil Nadu], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.825965300Z, serial_number=822003283324734, imei1=822003283324734, imei2=822003283324734, popurl=www.ranjeet-bhat.com, product_id=1, mst_model_id=1], problems=[Problems[id=15, remark=Cupiditate error qui officia voluptatem tempore.]]]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginApiTest()[pri:0, instance:com.Inwarrenty.Test.InWarrentLoginAPITest@428640fa]" started-at="2025-10-21T22:38:08 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" finished-at="2025-10-21T22:38:10 IST" duration-ms="2091" status="PASS">
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Sanjay, last_name=Agarwal, mobile_number=7004478242, mobile_number_alt=7005238603, email_id=anandswarup.pandey@hotmail.com, email_id_alt=shresth.kaul@gmail.com], customer_address=CustomerAddress[flat_number=528, apartment_name=Prajapat Inlet, street_name=Gupta Spurs, landmark=Johar Squares, area=Sethi Parks, pincode=86005, country=India, state=Assam], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.814932500Z, serial_number=988619994000630, imei1=988619994000630, imei2=988619994000630, popurl=www.dhanalakshmi-sethi.co.in, product_id=1, mst_model_id=1], problems=[Problems[id=7, remark=Ea officia ad similique exercitationem sequi dignissimos laborum.]]]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginApiTest -->
-      </class> <!-- com.Inwarrenty.Test.InWarrentLoginAPITest -->
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3420" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Rohan, last_name=Devar, mobile_number=7084581542, mobile_number_alt=7022338171, email_id=ekalavya.khanna@yahoo.co.in, email_id_alt=sushma.panicker@gmail.com], customer_address=CustomerAddress[flat_number=628, apartment_name=Kakkar Spurs, street_name=Iyengar Gateway, landmark=Varalakshmi Knoll, area=Tandon Via, pincode=49287, country=India, state=Lakshadweep], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.822964Z, serial_number=078198295511558, imei1=078198295511558, imei2=078198295511558, popurl=www.girik-rana.info, product_id=1, mst_model_id=1], problems=[Problems[id=8, remark=Fugiat soluta quae quidem ab voluptate aut.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3417" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Deenabandhu, last_name=Kaul, mobile_number=7006500677, mobile_number_alt=7045557039, email_id=bhaumik.iyer@yahoo.co.in, email_id_alt=chatura.dutta@hotmail.com], customer_address=CustomerAddress[flat_number=339, apartment_name=Khan Extensions, street_name=Daiwik Shores, landmark=Baalagopaal Courts, area=Trivedi Haven, pincode=03275, country=India, state=West Bengal], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.820956300Z, serial_number=015631017055512, imei1=015631017055512, imei2=015631017055512, popurl=www.chitrali-ahuja.name, product_id=1, mst_model_id=1], problems=[Problems[id=3, remark=Cum accusamus fugiat voluptatem dolore ducimus.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3334" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Vidhya, last_name=Gill, mobile_number=7044435944, mobile_number_alt=7020281400, email_id=dipesh.saini@yahoo.co.in, email_id_alt=dandapaani.nair@yahoo.co.in], customer_address=CustomerAddress[flat_number=634, apartment_name=Butt Park, street_name=Abbott Forge, landmark=Nair Mills, area=Ahluwalia Square, pincode=95670, country=India, state=Sikkim], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.824963700Z, serial_number=994860798372178, imei1=994860798372178, imei2=994860798372178, popurl=www.deeptimay-agarwal.name, product_id=1, mst_model_id=1], problems=[Problems[id=4, remark=Reprehenderit voluptas omnis quis quia modi accusantium nisi.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3334" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Baladitya, last_name=Chopra, mobile_number=7000642274, mobile_number_alt=7087968739, email_id=annapurna.tagore@yahoo.co.in, email_id_alt=bhoopat.mehrotra@yahoo.co.in], customer_address=CustomerAddress[flat_number=920, apartment_name=Kocchar Pines, street_name=Trivedi Fords, landmark=Sinha Spring, area=Rageshwari Corners, pincode=65347, country=India, state=Punjab], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.796481100Z, serial_number=314598741341706, imei1=314598741341706, imei2=314598741341706, popurl=www.daksha-tandon.name, product_id=1, mst_model_id=1], problems=[Problems[id=11, remark=Et quod iste consequatur et dolorem repudiandae amet.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3419" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Anand, last_name=Desai, mobile_number=7010594978, mobile_number_alt=7013273716, email_id=bharat.rana@yahoo.co.in, email_id_alt=prasanna.rana@yahoo.co.in], customer_address=CustomerAddress[flat_number=012, apartment_name=Ujjwal Motorway, street_name=Shakti Estate, landmark=Bhagwanti Drive, area=Marar River, pincode=65472, country=India, state=Arunachal Pradesh], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.817934600Z, serial_number=591360195108054, imei1=591360195108054, imei2=591360195108054, popurl=www.anwesha-namboothiri.net, product_id=1, mst_model_id=1], problems=[Problems[id=22, remark=Non nihil ut explicabo laboriosam autem sunt in nihil tempora.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3334" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Kailash, last_name=Kocchar, mobile_number=7024943130, mobile_number_alt=7012519583, email_id=baidehi.kocchar@yahoo.co.in, email_id_alt=budhil.singh@hotmail.com], customer_address=CustomerAddress[flat_number=239, apartment_name=Mohini Terrace, street_name=Iyengar Pines, landmark=Anamika Valley, area=Pandey Lights, pincode=00687, country=India, state=Arunachal Pradesh], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.826964600Z, serial_number=351762033681986, imei1=351762033681986, imei2=351762033681986, popurl=www.shashikala-talwar.biz, product_id=1, mst_model_id=1], problems=[Problems[id=15, remark=Et beatae minima cum dolorem excepturi qui corporis.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:41 IST" duration-ms="3420" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Deevakar, last_name=Kaur, mobile_number=7078453062, mobile_number_alt=7021641829, email_id=anang.devar@gmail.com, email_id_alt=ranjit.gandhi@yahoo.co.in], customer_address=CustomerAddress[flat_number=183, apartment_name=Acharya Camp, street_name=Dwivedi View, landmark=Bhagavaan Fields, area=Nambeesan Passage, pincode=90396, country=India, state=West Bengal], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.818931900Z, serial_number=800290364009636, imei1=800290364009636, imei2=800290364009636, popurl=www.smriti-patil.info, product_id=1, mst_model_id=1], problems=[Problems[id=3, remark=Voluptas culpa architecto veniam praesentium aut illo quibusdam dicta architecto.]]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+        <test-method signature="createJobApi(com.Inwarrenty.request.model.CreateJobAPIPayload)[pri:0, instance:com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest@1151e434]" started-at="2025-11-26T22:45:37 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " data-provider="createJobAPIFakerDataProvider" finished-at="2025-11-26T22:45:40 IST" duration-ms="3066" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CreateJobAPIPayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=1, customer=Customer[first_name=Rukhmani, last_name=Johar, mobile_number=7021987838, mobile_number_alt=7047375863, email_id=tara.jain@gmail.com, email_id_alt=abhirath.dubashi@gmail.com], customer_address=CustomerAddress[flat_number=504, apartment_name=Anwesha Oval, street_name=Hiranya Field, landmark=Ameyatma Common, area=Nayar Greens, pincode=59493, country=India, state=Chandigarh], customer_product=CustomerProduct[dop=2025-11-16T17:15:37.816935Z, serial_number=069157044201223, imei1=069157044201223, imei2=069157044201223, popurl=www.jyoti-trivedi.name, product_id=1, mst_model_id=1], problems=[Problems[id=18, remark=Hic libero eaque ipsum rem dignissimos unde voluptas et.]]]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <500>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <500>.
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$21.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest.createJobApi(InwarrentyCreateAPIDataProviderTest.java:26)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJobApi -->
+      </class> <!-- com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

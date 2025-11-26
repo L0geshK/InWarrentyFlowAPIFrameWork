@@ -8,7 +8,8 @@ import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
-import com.Inwarrenty.request.model.problems;
+import com.Inwarrenty.request.model.Problems;
+
 
 public class CreateJobBeanMapper {
 	
@@ -50,10 +51,10 @@ public class CreateJobBeanMapper {
 				bean.getCustomer_product__popurl(),
 				mstwarrentystatusId, MstoemId);
 		
-		List<problems>problemlist = new ArrayList<problems>();
+		List<Problems>problemlist = new ArrayList<Problems>();
 		int prodbleid = Integer.parseInt(bean.getProblems__id());
 		
-		problems problem = new problems(prodbleid,bean.getProblems__remark());
+		Problems problem = new Problems(prodbleid,bean.getProblems__remark());
 		problemlist.add(problem);
 		
 		CreateJobAPIPayload payload = new CreateJobAPIPayload(mstservicelocationid, mstplatformid, mstwarrentystatusid, Mstoemid, customer, customerAddress, customerproduct, problemlist);
