@@ -1,6 +1,6 @@
 package com.Inwarrenty.Constants;
 
-public enum Problems {
+public enum Problem {
 	 SMARTPHONE_IS_RUNNING_SLOW(1),
 	    POOR_BATTERY_LIFE(2),
 	    PHONE_OR_APP_CRASHES(3),
@@ -26,7 +26,7 @@ public enum Problems {
 	    PK_TEST_PROB2(23);
 	
 	int code;
-	private Problems(int code) {
+	private Problem(int code) {
 		this.code=code;
 
 	}

@@ -13,11 +13,11 @@ import com.Inwarrenty.request.model.CreateJobAPIPayload;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
-public class InwarrentyCreateAPIDataProviderTest {
+public class InwarrentyCreateAPIDataProviderTestWithFaker {
 
 	@Test(description = "Verifying if the  Create api is able to Create InWarrenty Job ", groups = { "api",
 			"regression",
-			"smoke","csv" }, dataProvider = "createJobAPIDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
+			"smoke" ,"Faker"}, dataProvider = "createJobAPIFakerDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
 	public void createJobApi(CreateJobAPIPayload createJobAPIPayload) throws IOException {
 
 		given()
