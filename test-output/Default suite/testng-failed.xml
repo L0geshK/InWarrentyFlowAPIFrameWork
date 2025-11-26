@@ -5,7 +5,7 @@
     <classes>
       <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest">
         <methods>
-          <include name="createJobApi" invocation-numbers="0 1"/>
+          <include name="createJobApi" invocation-numbers="2"/>
         </methods>
       </class> <!-- com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest -->
     </classes>

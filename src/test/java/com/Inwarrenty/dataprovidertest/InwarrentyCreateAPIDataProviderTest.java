@@ -17,7 +17,7 @@ public class InwarrentyCreateAPIDataProviderTest {
 
 	@Test(description = "Verifying if the  Create api is able to Create InWarrenty Job ", groups = { "api",
 			"regression",
-			"smoke" }, dataProvider = "createJobAPIFakerDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
+			"smoke","csv" }, dataProvider = "createJobAPIDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
 	public void createJobApi(CreateJobAPIPayload createJobAPIPayload) throws IOException {
 
 		given()

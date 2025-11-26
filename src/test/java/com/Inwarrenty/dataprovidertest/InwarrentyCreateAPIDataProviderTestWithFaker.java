@@ -17,7 +17,7 @@ public class InwarrentyCreateAPIDataProviderTestWithFaker {
 
 	@Test(description = "Verifying if the  Create api is able to Create InWarrenty Job ", groups = { "api",
 			"regression",
-			"smoke" }, dataProvider = "createJobAPIDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
+			"smoke" ,"Faker"}, dataProvider = "createJobAPIFakerDataProvider", dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class)
 	public void createJobApi(CreateJobAPIPayload createJobAPIPayload) throws IOException {
 
 		given()
