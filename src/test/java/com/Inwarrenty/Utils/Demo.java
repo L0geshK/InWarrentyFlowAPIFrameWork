@@ -1,38 +1,29 @@
 package com.Inwarrenty.Utils;
 
-import java.util.Iterator;
-import java.util.Locale;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
 
-import com.Inwarrenty.dataproviderbean.CreateJobBean;
-import com.github.javafaker.Faker;
+import com.Inwarrenty.request.model.UserCredentials;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Demo {
-	
-	
- public static void fackers() {
-	 Faker faker = new Faker(new Locale("en-IND"));
-	 System.out.println(faker.name().firstName());
-	 System.out.println(faker.name().firstName());
-	 
-	 System.out.println(faker.address().cityName());
-	 
-	 System.out.println(faker.number().digits(5));
-	 
-	 System.out.println(faker.numerify("93##########"));
-	 
-	
-	
-	 
-		 
-	 }
-	public static void main(String[] args) {
-		fackers();
+	public static void main(String[] args) throws StreamReadException, DatabindException, IOException {
+		
+		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("TestData/demo.json");
+		ObjectMapper object = new ObjectMapper();
+		UserCredentials[] UserCredentials = object.readValue(is, UserCredentials[].class);
+		List<UserCredentials>UserCredentialslist = Arrays.asList(UserCredentials);
+		
+		UserCredentialslist.iterator();
 		
 		
-	/* Iterator<CreateJobBean>iterator=CSVReaderUtils.loadCSV("TestData/CreateJobData.csv", CreateJobBean.class);
-	 while(iterator.hasNext()) {
-		 System.out.println(iterator.next()); */
-	 }
+	}
+	
+
 	 
 	 
 	

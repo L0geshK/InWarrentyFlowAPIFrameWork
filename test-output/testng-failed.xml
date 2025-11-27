@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest">
+      <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest">
         <methods>
-          <include name="createJobApi" invocation-numbers="2"/>
+          <include name="loginApiTest"/>
         </methods>
-      </class> <!-- com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest -->
+      </class> <!-- com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
