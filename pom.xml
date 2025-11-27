@@ -89,5 +89,10 @@
 			<version>1.0.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>automaction-assigment</groupId>
+			<artifactId>automaction-assigment</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
