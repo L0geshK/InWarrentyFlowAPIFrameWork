@@ -15,6 +15,8 @@ import com.Inwarrenty.dataproviderbean.CreateJobBean;
 import com.Inwarrenty.dataproviderbean.UserPOJO;
 import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.UserCredentials;
+import com.Inwarrenty.Utils.ExcelReaderUtils;
+
 
 public class DataProviderUtils {
 	
@@ -63,4 +65,31 @@ public class DataProviderUtils {
 		return ExcelReaderUtils.loadTestData();
 	}
 	
+	@DataProvider(name = "LoginAPIExcelDataProviderPoiji", parallel = true)
+	public static Iterator<UserPOJO> loginAPIExcelDataProviderPoiji() {
+	    return ExcelReaderUtils.loadTestDataUsingPoiji(
+	            "TestData/TestData.xlsx",
+	            "LogintestData",
+	            UserPOJO.class
+	    );
+	}
+	@DataProvider(name ="CreateJobAPIExcelDataProviderPoiji",parallel = true)
+	public static Iterator<CreateJobAPIPayload> CreateJobAPIExcelDataProviderPoiji() {
+		Iterator<CreateJobBean>datalist=ExcelReaderUtils.loadTestDataUsingPoiji(
+	            "TestData/TestData.xlsx",
+	            "CreateJobAPI",
+	             CreateJobBean.class);
+		 List<CreateJobAPIPayload> payloadlist = new ArrayList<CreateJobAPIPayload>();
+		 CreateJobBean tempbean;
+		 CreateJobAPIPayload tempCreateJob;
+		 while(datalist.hasNext()) {
+			 tempbean = 	datalist.next();
+			 tempCreateJob=CreateJobBeanMapper.mapper(tempbean);
+			 
+			 payloadlist.add(tempCreateJob);
+		 }
+		 return payloadlist.iterator();
+	}
+
+		
 }

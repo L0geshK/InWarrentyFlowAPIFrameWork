@@ -4,14 +4,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.Inwarrenty.dataproviderbean.UserPOJO;
 import com.Inwarrenty.request.model.UserCredentials;
+import com.poiji.bind.Poiji;
 
 public class ExcelReaderUtils {
 
@@ -78,5 +82,27 @@ public class ExcelReaderUtils {
 		return userlist.iterator();
 
 	}
+	
+	public static <T> Iterator<T> loadTestDataUsingPoiji(String xlsxFile, String sheetName, Class<T> clazz)  {
+		// APACHE POI OOXML LIB
+		InputStream is = Thread.currentThread().getContextClassLoader()
+				.getResourceAsStream(xlsxFile);  
+		XSSFWorkbook myWorkBook = null;
+		try {
+			myWorkBook = new XSSFWorkbook(is);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// Focus on the Sheet
+
+		XSSFSheet mySheet = myWorkBook.getSheet(sheetName);   
+		
+		List<T> list=Poiji.fromExcel(mySheet, clazz);
+		return list.iterator();
+	}
+
+		
+	
 
 }

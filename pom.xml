@@ -100,5 +100,13 @@
 			<artifactId>automaction-assigment</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
+		<dependency>
+			<groupId>com.github.ozlerhakan</groupId>
+			<artifactId>poiji</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+
+
 	</dependencies>
 </project>

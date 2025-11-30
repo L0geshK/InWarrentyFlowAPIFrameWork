@@ -51,6 +51,32 @@ public class InWarrentLoginAPIExcellDataProviderTest {
 		
 	}
 	
+	@Test(description = "Verifying if login API is Working for FD User!!!", 
+			groups = {"api","Smoke","regression","datadriven"},
+			dataProviderClass = com.Inwarrenty.dataprovider.DataProviderUtils.class,
+			dataProvider = "loginAPIExcelDataProviderPoiji")
+	public void loginApiTest(UserPOJO user) throws IOException  {
+		
+		
+		
+		given()
+		      .spec(SpecUtils.getRequestSpec(user))
+		      
+		     
+		.when()
+		      .post("/login")
+		.then()
+		      .spec(SpecUtils.getResponceSpec())
+		      .body("message", equalTo("Success"))
+		      .body("data.token", notNullValue())
+		      .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/LoginResponceSchema.json"));
+		     
+
+		      
+		        
+		
+	}
+	
 	
 	
 	    
