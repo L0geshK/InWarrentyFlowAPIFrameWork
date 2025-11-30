@@ -1,7 +1,13 @@
 package com.Inwarrenty.dataproviderbean;
 
+import com.poiji.annotation.ExcelCellName;
+
 public class UserPOJO {
+	
+	@ExcelCellName("username") 
 	private String username;
+	
+	@ExcelCellName("password") 
 	private String password;
 	
 	public UserPOJO() {
