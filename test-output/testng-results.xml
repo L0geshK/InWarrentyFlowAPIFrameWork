@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-27T22:40:47 IST" name="Default suite" finished-at="2025-11-27T22:41:01 IST" duration-ms="14177">
+  <suite started-at="2025-11-29T22:33:01 IST" name="Default suite" finished-at="2025-11-29T22:33:04 IST" duration-ms="3140">
     <groups>
       <group name="datadriven">
-        <method signature="InWarrentLoginAPIJsonDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest"/>
+        <method signature="InWarrentLoginAPIExcellDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest"/>
       </group> <!-- datadriven -->
       <group name="regression">
-        <method signature="InWarrentLoginAPIJsonDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest"/>
+        <method signature="InWarrentLoginAPIExcellDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest"/>
       </group> <!-- regression -->
       <group name="Smoke">
-        <method signature="InWarrentLoginAPIJsonDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest"/>
+        <method signature="InWarrentLoginAPIExcellDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest"/>
       </group> <!-- Smoke -->
       <group name="api">
-        <method signature="InWarrentLoginAPIJsonDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest"/>
+        <method signature="InWarrentLoginAPIExcellDataProviderTest.loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" name="loginApiTest" class="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2025-11-27T22:40:47 IST" name="Default test" finished-at="2025-11-27T22:41:01 IST" duration-ms="14177">
-      <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest">
-        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" started-at="2025-11-27T22:40:59 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIJsonDataProvider" finished-at="2025-11-27T22:41:01 IST" duration-ms="2451" status="PASS">
+    <test started-at="2025-11-29T22:33:01 IST" name="Default test" finished-at="2025-11-29T22:33:04 IST" duration-ms="3140">
+      <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest">
+        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" started-at="2025-11-29T22:33:01 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIExcellDataProvider" finished-at="2025-11-29T22:33:04 IST" duration-ms="2344" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,18 +30,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginApiTest -->
-        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" started-at="2025-11-27T22:40:59 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIJsonDataProvider" finished-at="2025-11-27T22:41:01 IST" duration-ms="2449" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[UserCredentials[username=iamsup, password=password]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginApiTest -->
-        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest@298a5e20]" started-at="2025-11-27T22:40:59 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIJsonDataProvider" finished-at="2025-11-27T22:41:01 IST" duration-ms="2449" status="PASS">
+        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" started-at="2025-11-29T22:33:01 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIExcellDataProvider" finished-at="2025-11-29T22:33:04 IST" duration-ms="2344" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -52,7 +41,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginApiTest -->
-      </class> <!-- com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest -->
+        <test-method signature="loginApiTest(com.Inwarrenty.request.model.UserCredentials)[pri:0, instance:com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest@d86a6f]" started-at="2025-11-29T22:33:01 IST" name="loginApiTest" description="Verifying if login API is Working for FD User!!!" data-provider="LoginAPIExcellDataProvider" finished-at="2025-11-29T22:33:04 IST" duration-ms="2344" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserCredentials[username=iamsup, password=password]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApiTest -->
+      </class> <!-- com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
