@@ -12,6 +12,8 @@
       <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
        <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTestWithFaker"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDBDataProviderTestWith"/>
         
     </classes>
   </test> <!-- Test -->

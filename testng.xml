@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.Inwarrenty.Test.InWarrentLoginAPITest"/>
-      <class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest"/>
-      <class name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest"/>
-      <class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest"/>
-      <class name="com.Inwarrenty.Test.InwarrentyCreateAPITest"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.Inwarrenty.Test.InWarrentLoginAPITest" />
+			<class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest" />
+			<class
+				name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest" />
+			<class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest" />
+			<class name="com.Inwarrenty.Test.InwarrentyCreateAPITest" />
+			<class
+				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji" />
+			<class
+				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDBDataProviderTestWith" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->
