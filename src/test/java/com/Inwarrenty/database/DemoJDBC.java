@@ -1,13 +1,9 @@
 package com.Inwarrenty.database;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.Inwarrenty.Utils.CreateJobBeanMapper;
-import com.Inwarrenty.database.dao.CreateJobPayloadDataDao;
-import com.Inwarrenty.dataproviderbean.CreateJobBean;
-import com.Inwarrenty.request.model.CreateJobAPIPayload;
+import com.Inwarrenty.database.dao.CustomerDao;
+import com.Inwarrenty.db.model.CustomerDBModel;
 
 public class DemoJDBC {
 	public static void main(String[] args) throws SQLException {
@@ -33,18 +29,25 @@ public class DemoJDBC {
 //			e.printStackTrace();
 //		}
 		
-	List<CreateJobBean> beanlist=	CreateJobPayloadDataDao.getCreatePayloadData();
-	List<CreateJobAPIPayload>payloadlist = new ArrayList<CreateJobAPIPayload>();
-	for(CreateJobBean createjob :beanlist) {
-		CreateJobAPIPayload payload = CreateJobBeanMapper.mapper(createjob);
-		payloadlist.add(payload);
+//	List<CreateJobBean> beanlist=	CreateJobPayloadDataDao.getCreatePayloadData();
+//	List<CreateJobAPIPayload>payloadlist = new ArrayList<CreateJobAPIPayload>();
+//	for(CreateJobBean createjob :beanlist) {
+//		CreateJobAPIPayload payload = CreateJobBeanMapper.mapper(createjob);
+//		payloadlist.add(payload);
+//		
+//	}
+//	for(CreateJobAPIPayload payload :payloadlist) {
+//		System.out.println(payload);
+//	}
+//		
+//		
+//	}
+		
+		CustomerDBModel dc = CustomerDao.getCustomerinfo(127974);
+		System.out.println(dc);
+		
+		CustomerDBModel db = new CustomerDBModel("logesh", "kanna", "8072150155", "5698555555", "loege", "dddddd");
+		System.out.println(db);
 		
 	}
-	for(CreateJobAPIPayload payload :payloadlist) {
-		System.out.println(payload);
-	}
-		
-		
-	}
-
 }
