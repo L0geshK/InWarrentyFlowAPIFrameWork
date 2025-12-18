@@ -2,8 +2,9 @@ package com.Inwarrenty.database;
 
 import java.sql.SQLException;
 
-import com.Inwarrenty.database.dao.CustomerDao;
-import com.Inwarrenty.db.model.CustomerDBModel;
+import com.Inwarrenty.database.dao.CustomerAddressDao;
+import com.Inwarrenty.db.model.CustomerAddressDBModel;
+import com.Inwarrenty.request.model.CustomerAddress;
 
 public class DemoJDBC {
 	public static void main(String[] args) throws SQLException {
@@ -43,11 +44,14 @@ public class DemoJDBC {
 //		
 //	}
 		
-		CustomerDBModel dc = CustomerDao.getCustomerinfo(127974);
-		System.out.println(dc);
+//		CustomerDBModel dc = CustomerDao.getCustomerinfo(127974);
+//		System.out.println(dc);
+//		
+//		CustomerDBModel db = new CustomerDBModel("logesh", "kanna", "8072150155", "5698555555", "loege", "dddddd");
+//		System.out.println(db);
 		
-		CustomerDBModel db = new CustomerDBModel("logesh", "kanna", "8072150155", "5698555555", "loege", "dddddd");
-		System.out.println(db);
 		
+		CustomerAddressDBModel customerAddressDBModel = CustomerAddressDao.getCustomerAddressData(127974);
+		System.out.println(customerAddressDBModel);
 	}
 }

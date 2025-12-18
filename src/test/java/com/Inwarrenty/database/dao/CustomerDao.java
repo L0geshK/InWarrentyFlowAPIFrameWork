@@ -29,7 +29,7 @@ public class CustomerDao {
 			result = statement.executeQuery();
 			 while(result.next()) {
 				 System.out.println(result.getString("first_name"));
-				 customermodel = new CustomerDBModel(result.getString("first_name"),result.getString("last_name"),result.getString("mobile_number"),result.getString("mobile_number_alt"),result.getString("email_id"),result.getString("email_id_alt"));
+				 customermodel = new CustomerDBModel(result.getInt("id"),result.getString("first_name"),result.getString("last_name"),result.getString("mobile_number"),result.getString("mobile_number_alt"),result.getString("email_id"),result.getString("email_id_alt"),result.getInt("tr_customer_address_id"));
 				 
 			 }
 		} catch (SQLException e) {
