@@ -3,39 +3,37 @@ package com.Inwarrenty.Test;
 import static io.restassured.RestAssured.given;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-import com.Inwarrenty.Constants.Models;
-import com.Inwarrenty.Constants.OemId;
-import com.Inwarrenty.Constants.Platform;
-import com.Inwarrenty.Constants.Problem;
-import com.Inwarrenty.Constants.Products;
 import com.Inwarrenty.Constants.Roles;
-import com.Inwarrenty.Constants.ServiceLocation;
-import com.Inwarrenty.Constants.WarrentyStatus;
-import com.Inwarrenty.Utils.DateTimeUtils;
 import com.Inwarrenty.Utils.FakerDataGenerator;
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.database.dao.CustomerAddressDao;
 import com.Inwarrenty.database.dao.CustomerDao;
+import com.Inwarrenty.database.dao.CustomerProductDao;
+import com.Inwarrenty.database.dao.JobHeadDao;
+import com.Inwarrenty.database.dao.MapJobProblemDao;
 import com.Inwarrenty.db.model.CustomerAddressDBModel;
 import com.Inwarrenty.db.model.CustomerDBModel;
+import com.Inwarrenty.db.model.CustomerProductDBModel;
+import com.Inwarrenty.db.model.JobHeadDBModel;
+import com.Inwarrenty.db.model.MapJobProblemDBModel;
 import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
-import com.Inwarrenty.request.model.Problems;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 
 public class InwarrentyCreateAPITest2WithFaker {
 	 private CreateJobAPIPayload createJobAPIPayload;
+	 
 	
 	 
 	 
@@ -51,7 +49,7 @@ public class InwarrentyCreateAPITest2WithFaker {
 		
 		
 		
-		int customerid=given() 
+		Response response=given() 
 		
 		.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD, createJobAPIPayload))
 		.when()
@@ -62,12 +60,18 @@ public class InwarrentyCreateAPITest2WithFaker {
 		.body("message", Matchers.equalTo("Job created successfully. "))
 		.body("data", Matchers.notNullValue())
 		.body("data.job_number", Matchers.startsWith("JOB_"))
-		.extract().body().jsonPath().getInt("data.tr_customer_id");
+		.extract().response();
+		//.extract().body().jsonPath().getInt("data.tr_customer_id"); --> this method for extrat one data 
+		
+		int customerid =response.then().extract().jsonPath().getInt("data.tr_customer_id");
+		
+		
 		Customer expecteddata = createJobAPIPayload.customer();
 		CustomerAddress expecteAddddata = createJobAPIPayload.customer_address();
+		CustomerProduct expectedProdata = createJobAPIPayload.customer_product();
 		CustomerDBModel customermodel=CustomerDao.getCustomerinfo(customerid);
       CustomerAddressDBModel customerAddmodel=CustomerAddressDao.getCustomerAddressData(customermodel.getTr_customer_address_id());
-		
+      
 		
 		Assert.assertEquals(expecteddata.first_name(), customermodel.getFirst_name());
 		Assert.assertEquals(expecteddata.last_name(), customermodel.getLast_name());
@@ -86,6 +90,29 @@ public class InwarrentyCreateAPITest2WithFaker {
 		Assert.assertEquals(expecteAddddata.country(), customerAddmodel.getCountry());
 		Assert.assertEquals(expecteAddddata.state(), customerAddmodel.getState());
 		
+		int productID = response.then().extract().jsonPath().getInt("data.tr_customer_product_id");
+		CustomerProductDBModel customerProddata = CustomerProductDao.getproductInfoFromDB(productID);
+		Assert.assertEquals(expectedProdata.imei1(), customerProddata.getImei1());
+		Assert.assertEquals(expectedProdata.imei2(), customerProddata.getImei2());
+		Assert.assertEquals(expectedProdata.serial_number(), customerProddata.getSerial_number());
+		Assert.assertEquals(expectedProdata.popurl(), customerProddata.getPopurl());
+		//Assert.assertEquals(expectedProdata.dop(), customerProddata.getDop());
+		Assert.assertEquals(expectedProdata.mst_model_id(), customerProddata.getMst_model_id());
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(expectedProdata.dop(), customerProddata.getDop());
+		
+		
+		int tr_job_head_id = response.then().extract().jsonPath().getInt("data.id");
+		MapJobProblemDBModel mapjobproblem = MapJobProblemDao.getProblemDetails(tr_job_head_id);
+		
+		Assert.assertEquals(mapjobproblem.getMst_problem_id(), createJobAPIPayload.problems().get(0).id());
+		Assert.assertEquals(mapjobproblem.getRemark(), createJobAPIPayload.problems().get(0).remark());
+		int trobhead_id = response.then().extract().jsonPath().getInt("data.id");
+		JobHeadDBModel jobheadbmodel = JobHeadDao.getJobHeadDetails(trobhead_id);
+		Assert.assertEquals(jobheadbmodel.getMst_oem_id(), createJobAPIPayload.mst_oem_id());
+		
+
+
 		
 		
 		

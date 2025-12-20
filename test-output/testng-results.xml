@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-18T23:10:48 IST" name="Default suite" finished-at="2025-12-18T23:11:00 IST" duration-ms="12547">
+  <suite started-at="2025-12-20T22:57:07 IST" name="Default suite" finished-at="2025-12-20T22:57:37 IST" duration-ms="29974">
     <groups>
       <group name="regression">
         <method signature="InwarrentyCreateAPITest2WithFaker.createJobApi()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" name="createJobApi" class="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker"/>
@@ -14,13 +14,13 @@
         <method signature="InwarrentyCreateAPITest2WithFaker.createJobApi()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" name="createJobApi" class="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2025-12-18T23:10:48 IST" name="Default test" finished-at="2025-12-18T23:11:00 IST" duration-ms="12547">
+    <test started-at="2025-12-20T22:57:07 IST" name="Default test" finished-at="2025-12-20T22:57:37 IST" duration-ms="29974">
       <class name="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" started-at="2025-12-18T23:10:48 IST" name="setup" description="SetUp the Payload for Create API Request:" finished-at="2025-12-18T23:10:48 IST" duration-ms="171" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" started-at="2025-12-20T22:57:07 IST" name="setup" description="SetUp the Payload for Create API Request:" finished-at="2025-12-20T22:57:08 IST" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createJobApi()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" started-at="2025-12-18T23:10:48 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " finished-at="2025-12-18T23:11:00 IST" duration-ms="12331" status="PASS">
+        <test-method signature="createJobApi()[pri:0, instance:com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker@6e9175d8]" started-at="2025-12-20T22:57:08 IST" name="createJobApi" description="Verifying if the  Create api is able to Create InWarrenty Job " finished-at="2025-12-20T22:57:37 IST" duration-ms="29746" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createJobApi -->

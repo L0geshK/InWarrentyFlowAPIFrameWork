@@ -5,8 +5,8 @@
     <classes>
       <class name="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker">
         <methods>
-          <include name="createJobApi"/>
           <include name="setup"/>
+          <include name="createJobApi"/>
         </methods>
       </class> <!-- com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker -->
     </classes>
