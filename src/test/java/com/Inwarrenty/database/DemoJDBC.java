@@ -6,6 +6,8 @@ import com.Inwarrenty.database.dao.CustomerAddressDao;
 import com.Inwarrenty.db.model.CustomerAddressDBModel;
 import com.Inwarrenty.request.model.CustomerAddress;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 public class DemoJDBC {
 	public static void main(String[] args) throws SQLException {
 		
@@ -51,7 +53,10 @@ public class DemoJDBC {
 //		System.out.println(db);
 		
 		
-		CustomerAddressDBModel customerAddressDBModel = CustomerAddressDao.getCustomerAddressData(127974);
-		System.out.println(customerAddressDBModel);
+		Dotenv dotenv = Dotenv.load();
+		String url=dotenv.get("DB_URL");
+		System.out.println(url);
+		
+		
 	}
 }
