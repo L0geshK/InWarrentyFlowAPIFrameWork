@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import com.Inwarrenty.Utils.ConfigManager;
 import com.Inwarrenty.Utils.EnvUtils;
+import com.Inwarrenty.Utils.VaultDBConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -29,9 +30,9 @@ public class DataBaseManagerWithHikariCP {
 
 	static {
 		try {
-			DB_URL = EnvUtils.getValue("DB_URL");
-			DB_USERNAME = EnvUtils.getValue("DB_USERNAME");
-			DB_PASSWORD = EnvUtils.getValue("DB_PASSWORD");
+			DB_URL = VaultDBConfig.getSecret("DB_URL");
+			DB_USERNAME = VaultDBConfig.getSecret("DB_USERNAME");
+			DB_PASSWORD = VaultDBConfig.getSecret("DB_PASSWORD");
 			MAXIMUN_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUN_POOL_SIZE"));
 			MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
 			CONNECTION_TIMEOUT_IN_SEC = Integer.parseInt(ConfigManager.getProperty("CONNECTION_TIMEOUT_IN_SEC"));
