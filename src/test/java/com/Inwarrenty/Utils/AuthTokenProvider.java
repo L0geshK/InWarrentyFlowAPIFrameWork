@@ -1,23 +1,30 @@
 package com.Inwarrenty.Utils;
 
-import static com.Inwarrenty.Utils.ConfigManager.getProperty;
-import  static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.notNullValue;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.management.relation.Role;
 
 import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.request.model.UserCredentials;
 
-import io.restassured.http.ContentType;
-import io.restassured.module.jsv.JsonSchemaValidator;
-
 public class AuthTokenProvider {
 	
+	private static Map<Roles,String>tokencache = new ConcurrentHashMap<Roles, String>();
 	
-	public static String getToken(Roles role) {
+	
+	
+	public static String getToken(Roles role) {	
+		
+		if(tokencache.containsKey(role)) {
+			return tokencache.get(role);
+		}
 		
 		UserCredentials userCredentials = null;
 		String token = null;
@@ -58,6 +65,7 @@ public class AuthTokenProvider {
 		}
 			    
 
+		tokencache.put(role, token);
 		
 		return token;
 	}
