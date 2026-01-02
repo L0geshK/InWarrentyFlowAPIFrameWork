@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import com.Inwarrenty.Utils.ConfigManager;
 import com.Inwarrenty.Utils.EnvUtils;
+import com.Inwarrenty.Utils.VaultDBConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -22,6 +23,7 @@ public class DataBaseManagerWithHikariCP {
 	private static String HIKARI_CP_POOL_NAME;
 	private volatile static HikariDataSource ds;
 	private static Connection conn;
+	private static boolean isVaultup;
 
 	private DataBaseManagerWithHikariCP() {
 
@@ -29,9 +31,10 @@ public class DataBaseManagerWithHikariCP {
 
 	static {
 		try {
-			DB_URL = EnvUtils.getValue("DB_URL");
-			DB_USERNAME = EnvUtils.getValue("DB_USERNAME");
-			DB_PASSWORD = EnvUtils.getValue("DB_PASSWORD");
+			isVaultup=true;
+			DB_URL = VaultDBConfig.getSecret("DB_URL");
+			DB_USERNAME = VaultDBConfig.getSecret("DB_USERNAME");
+			DB_PASSWORD = VaultDBConfig.getSecret("DB_PASSWORD");
 			MAXIMUN_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUN_POOL_SIZE"));
 			MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
 			CONNECTION_TIMEOUT_IN_SEC = Integer.parseInt(ConfigManager.getProperty("CONNECTION_TIMEOUT_IN_SEC"));
@@ -85,6 +88,25 @@ public class DataBaseManagerWithHikariCP {
 		}
 		return conn;
 
+	}
+	
+	
+	public static String getSecret(String key) {
+		
+		
+		String value =null;
+		if(isVaultup) {
+		value=VaultDBConfig.getSecret(key);
+		}
+		if(value ==null) {
+			System.err.println("Vault is Down!!!!");
+			isVaultup=false;
+		}else {
+			System.out.println("Reading value from vault");
+		}
+		value = EnvUtils.getValue(key);
+		return value;
+		
 	}
 
 }
