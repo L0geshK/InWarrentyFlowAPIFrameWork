@@ -23,6 +23,7 @@ public class DataBaseManagerWithHikariCP {
 	private static String HIKARI_CP_POOL_NAME;
 	private volatile static HikariDataSource ds;
 	private static Connection conn;
+	private static boolean isVaultup;
 
 	private DataBaseManagerWithHikariCP() {
 
@@ -30,6 +31,7 @@ public class DataBaseManagerWithHikariCP {
 
 	static {
 		try {
+			isVaultup=true;
 			DB_URL = VaultDBConfig.getSecret("DB_URL");
 			DB_USERNAME = VaultDBConfig.getSecret("DB_USERNAME");
 			DB_PASSWORD = VaultDBConfig.getSecret("DB_PASSWORD");
@@ -86,6 +88,25 @@ public class DataBaseManagerWithHikariCP {
 		}
 		return conn;
 
+	}
+	
+	
+	public static String getSecret(String key) {
+		
+		
+		String value =null;
+		if(isVaultup) {
+		value=VaultDBConfig.getSecret(key);
+		}
+		if(value ==null) {
+			System.err.println("Vault is Down!!!!");
+			isVaultup=false;
+		}else {
+			System.out.println("Reading value from vault");
+		}
+		value = EnvUtils.getValue(key);
+		return value;
+		
 	}
 
 }
