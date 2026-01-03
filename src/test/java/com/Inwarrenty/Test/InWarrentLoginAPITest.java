@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.request.model.UserCredentials;
+import com.Inwarrenty.servicepackage.AuthService;
 
 import static  com.Inwarrenty.Utils.ConfigManager.*;
 import io.restassured.http.ContentType;
@@ -19,11 +20,13 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 public class InWarrentLoginAPITest {
 	
 	private UserCredentials userCredentials;
+	private AuthService authservice;
 	
 	
 	@BeforeMethod(description = "Create a Payload For Login API")
 	public void setup() {
 		 userCredentials = new UserCredentials("iamfd","password");
+		 authservice = new AuthService();
 		 
 	}
 	
@@ -34,13 +37,8 @@ public class InWarrentLoginAPITest {
 		
 		
 		
-		given()
-		      .spec(SpecUtils.getRequestSpec(userCredentials))
-		      
-		     
-		.when()
-		      .post("/login")
-		.then()
+		authservice.login(userCredentials)
+		      .then()
 		      .spec(SpecUtils.getResponceSpec())
 		      .body("message", equalTo("Success"))
 		      .body("data.token", notNullValue())

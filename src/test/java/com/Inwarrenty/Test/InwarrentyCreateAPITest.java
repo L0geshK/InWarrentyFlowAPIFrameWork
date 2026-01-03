@@ -25,27 +25,29 @@ import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
 import com.Inwarrenty.request.model.Problems;
+import com.Inwarrenty.servicepackage.CreateJobService;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InwarrentyCreateAPITest {
 	 private CreateJobAPIPayload createJobAPIPayload;
+	 private CreateJobService createjobservice;
 	
 	 
 	 
-	@BeforeMethod(description = "SetUp the Payload for Create API Request:")
+	@BeforeMethod(description = "SetUp the Payload for Create API Request and Also setup the Jobservice:")
 	public void setup() {
 
 		Customer Customer = new Customer("Bulah", "Peffer", "296-360-0709", "", "Christopher_Willms79@gmail.com", "");
 		CustomerAddress CustomerAddress = new CustomerAddress("c 304", "Jupiter", "MG road	", "Bangur Nagar", "Goregaon West", "411039", "India", "Maharashtra");
-		CustomerProduct CustomerProduct = new CustomerProduct(DateTimeUtils.getTimeWithDaysAgo(10), "10558685491189", "10558685491189", "10558685491189", DateTimeUtils.getTimeWithDaysAgo(10), Products.NEXUS_2.getcode(), Models.NEXUS_BLUE.getmodelcode());
+		CustomerProduct CustomerProduct = new CustomerProduct(DateTimeUtils.getTimeWithDaysAgo(10), "10558685491181", "10558685491181", "10558685491181", DateTimeUtils.getTimeWithDaysAgo(10), Products.NEXUS_2.getcode(), Models.NEXUS_BLUE.getmodelcode());
 		Problems problems = new Problems(Problem.BATTERY_ISSUE.getproblemcode(), "Battery Issue");
 		List<Problems> problemArray = new ArrayList<Problems>();
 		problemArray.add(problems);
 		
 		
 		 createJobAPIPayload = new CreateJobAPIPayload(ServiceLocation.SERVICE_lOCATION_A.getlocationcode(), Platform.FRONT_DESK.getplatformcode(), WarrentyStatus.IN_WARRENTY.getwarrentcode(),OemId.GOOGLE.getomeidcode() , Customer, CustomerAddress, CustomerProduct, problemArray);
-		
+		 createjobservice = new CreateJobService();
 		
 		
 	}
@@ -56,11 +58,7 @@ public class InwarrentyCreateAPITest {
 		
 		
 		
-		given() 
-		
-		.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD, createJobAPIPayload))
-		.when()
-		.post("/job/create")
+		createjobservice.getCreateJob(Roles.FD, createJobAPIPayload)
 		.then()
 		.spec(SpecUtils.responseSpec_OK())
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/CreateAPIResponceSchema.json"))

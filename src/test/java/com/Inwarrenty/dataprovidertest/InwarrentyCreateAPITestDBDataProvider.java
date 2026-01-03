@@ -30,12 +30,14 @@ import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
 import com.Inwarrenty.request.model.Problems;
+import com.Inwarrenty.servicepackage.CreateJobService;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InwarrentyCreateAPITestDBDataProvider {
 	 private CreateJobAPIPayload createJobAPIPayload;
 	 private  Customer Customer;
+	 private CreateJobService createjobservice;
 	 CustomerAddress CustomerAddress;
 	
 	 
@@ -53,7 +55,7 @@ public class InwarrentyCreateAPITestDBDataProvider {
 		
 		 createJobAPIPayload = new CreateJobAPIPayload(ServiceLocation.SERVICE_lOCATION_A.getlocationcode(), Platform.FRONT_DESK.getplatformcode(), WarrentyStatus.IN_WARRENTY.getwarrentcode(),OemId.GOOGLE.getomeidcode() , Customer, CustomerAddress, CustomerProduct, problemArray);
 		
-		
+		 createjobservice= new CreateJobService();
 		
 	}
 	
@@ -63,11 +65,7 @@ public class InwarrentyCreateAPITestDBDataProvider {
 		
 		
 		
-	int customerID =	given() 
-		
-		.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD, createJobAPIPayload))
-		.when()
-		.post("/job/create")
+	int customerID =	createjobservice.getCreateJob(Roles.FD, createJobAPIPayload)
 		.then()
 		.spec(SpecUtils.responseSpec_OK())
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/CreateAPIResponceSchema.json"))

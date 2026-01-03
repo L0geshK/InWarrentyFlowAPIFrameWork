@@ -10,10 +10,14 @@
   
     <classes>
       <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
-       <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
-        <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTestWithFaker"/>
-         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji"/>
+       <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIExcellDataProviderTest"/>
+        <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIJsonDataProviderTest"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTest"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTestWithFaker"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDataProviderTestWithJson"/>
          <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDBDataProviderTestWith"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji"/>
+         <class name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPITestDBDataProvider"/>
         
     </classes>
   </test> <!-- Test -->
