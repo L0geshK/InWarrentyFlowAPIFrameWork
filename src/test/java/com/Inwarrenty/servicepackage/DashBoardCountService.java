@@ -12,6 +12,7 @@ import io.restassured.response.Response;
 public class DashBoardCountService {
 
 	private static final String COUNT_ENDPONT = "/dashboard/count";
+	private static final String DETAILS_ENDPOINT="/dashboard/details";
 
 	public Response getCount(Roles role) {
 
@@ -35,6 +36,20 @@ public class DashBoardCountService {
 			response = given().spec(SpecUtils.getRequestSpec())
 
 					.when().get(COUNT_ENDPONT);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return response;
+
+	}
+	
+	public Response getDetails(Roles role,Object Payload) {
+
+		Response response = null;
+
+		try {
+			response = given().spec(SpecUtils.getRequestSpecWithAuth(role,Payload)).when().post(DETAILS_ENDPOINT);
 		} catch (IOException e) {
 
 			e.printStackTrace();
