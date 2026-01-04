@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.dataproviderbean.UserPOJO;
 import com.Inwarrenty.request.model.UserCredentials;
+import com.Inwarrenty.servicepackage.AuthService;
 
 import static  com.Inwarrenty.Utils.ConfigManager.*;
 import io.restassured.http.ContentType;
@@ -20,8 +21,14 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class InWarrentLoginAPIJsonDataProviderTest {
 	
+	private static AuthService authservice;
 	
 	
+	@BeforeMethod(description = "Setup the authservice for the test")
+	public void setup() {
+		authservice = new AuthService();
+
+	}
 	
 	
 	
@@ -33,12 +40,7 @@ public class InWarrentLoginAPIJsonDataProviderTest {
 		
 		
 		
-		given()
-		      .spec(SpecUtils.getRequestSpec(userCredentials))
-		      
-		     
-		.when()
-		      .post("/login")
+		authservice.login(userCredentials)
 		.then()
 		      .spec(SpecUtils.getResponceSpec())
 		      .body("message", equalTo("Success"))

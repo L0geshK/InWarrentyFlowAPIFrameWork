@@ -27,12 +27,14 @@ import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
+import com.Inwarrenty.servicepackage.CreateJobService;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 public class InwarrentyCreateAPITest2WithFaker {
 	 private CreateJobAPIPayload createJobAPIPayload;
+	 private CreateJobService createjobservice;
 	 
 	
 	 
@@ -41,6 +43,7 @@ public class InwarrentyCreateAPITest2WithFaker {
 	public void setup() {
 
 		createJobAPIPayload = FakerDataGenerator.generateFakeCreateJobData();
+		 createjobservice = new CreateJobService();
 	}
 	
 	
@@ -49,11 +52,7 @@ public class InwarrentyCreateAPITest2WithFaker {
 		
 		
 		
-		Response response=given() 
-		
-		.spec(SpecUtils.getRequestSpecWithAuth(Roles.FD, createJobAPIPayload))
-		.when()
-		.post("/job/create")
+		Response response=createjobservice.getCreateJob(Roles.FD, createJobAPIPayload)
 		.then()
 		.spec(SpecUtils.responseSpec_OK())
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ResponceSchema/CreateAPIResponceSchema.json"))
