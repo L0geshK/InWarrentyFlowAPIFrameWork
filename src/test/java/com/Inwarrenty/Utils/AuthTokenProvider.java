@@ -5,11 +5,10 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.management.relation.Role;
+import org.apache.logging.log4j.Logger;
 
 import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.request.model.UserCredentials;
@@ -17,14 +16,18 @@ import com.Inwarrenty.request.model.UserCredentials;
 public class AuthTokenProvider {
 	
 	private static Map<Roles,String>tokencache = new ConcurrentHashMap<Roles, String>();
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(AuthTokenProvider.class);
 	
 	
 	
 	public static String getToken(Roles role) {	
+		log.info(" Enter :Check the token for the role {} is present in the cache",role);
 		
 		if(tokencache.containsKey(role)) {
+			log.info("Token found for the role {}",role);
 			return tokencache.get(role);
 		}
+		log.info(" The token is not found for the role {}",role);
 		
 		UserCredentials userCredentials = null;
 		String token = null;
@@ -66,6 +69,7 @@ public class AuthTokenProvider {
 			    
 
 		tokencache.put(role, token);
+		log.info("Exit:");
 		
 		return token;
 	}

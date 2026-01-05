@@ -7,10 +7,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.dataproviderbean.CreateJobBean;
 
 public class CreateJobPayloadDataDao {
+	
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CreateJobPayloadDataDao.class);
+	
 	private static String SqlQuery = """
 						SELECT
 			mst_service_location_id,
@@ -52,7 +57,8 @@ public class CreateJobPayloadDataDao {
 
 						""";
 	
-	public static List<CreateJobBean> getCreatePayloadData() {
+	public static List<CreateJobBean> getCreatePayloadData() {	
+		log.info("Entry");
 		Connection conn=null;
 		Statement statement=null;
 		 ResultSet result= null;
@@ -103,6 +109,7 @@ public class CreateJobPayloadDataDao {
 	 for(CreateJobBean b :beanlist) {
 		 System.out.println(b);
 	 }
+	 log.info("Exit");
 	 return beanlist;
 	
 	}

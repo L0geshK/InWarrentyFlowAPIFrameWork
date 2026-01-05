@@ -5,10 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.Logger;
+
+import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerAddressDBModel;
 
 public class CustomerAddressDao {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerAddressDao.class);
 	private static final String CUSTOMER_ADD_QUERY = """
 									select id,
 			flat_number,
@@ -28,6 +32,7 @@ public class CustomerAddressDao {
 	}
 
 	public static CustomerAddressDBModel getCustomerAddressData(int customerAddressId) {
+		log.info("Entry");
 		Connection conn = null;
 		ResultSet result = null;
 		PreparedStatement statement = null;
@@ -50,6 +55,7 @@ public class CustomerAddressDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		log.info("Exit");
 		return customerAddressmodel;
 	}
 

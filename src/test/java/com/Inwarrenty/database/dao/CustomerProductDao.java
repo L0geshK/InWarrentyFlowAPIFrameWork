@@ -5,10 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerProductDBModel;
 
 public class CustomerProductDao {
+	
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerProductDao.class);
+	
 	private static final String PRODUCT_QUERY ="""
 			select * from tr_customer_product  where id =?;
 			
@@ -20,6 +25,7 @@ public class CustomerProductDao {
 	}
 	
 	public static CustomerProductDBModel getproductInfoFromDB(int tr_customer_product_id) {
+		log.info("Entry");
 		Connection conn = null;
 		ResultSet result = null;
 		PreparedStatement statement = null;
@@ -39,6 +45,7 @@ public class CustomerProductDao {
 			
 			e.printStackTrace();
 		}
+		log.info("Exit");
 		return customerProductDBModel;
 	}
 		

@@ -5,10 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.JobHeadDBModel;
 
 public class JobHeadDao {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(JobHeadDao.class);
 	private static final String JOB_HEAD_QUERY="""
 			SELECT * FROM tr_job_head where tr_customer_id=?;
 			
@@ -20,6 +23,7 @@ public class JobHeadDao {
 	}
 	
 	public static JobHeadDBModel getJobHeadDetails(int tr_customer_id) {
+		log.info("Entry");
 		Connection conn=null;
 		 ResultSet result= null; 
 		 PreparedStatement statement=null;
@@ -38,6 +42,7 @@ public class JobHeadDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 log.info("Exit");
 		 return jobHeadDBModel;
 		
 	}

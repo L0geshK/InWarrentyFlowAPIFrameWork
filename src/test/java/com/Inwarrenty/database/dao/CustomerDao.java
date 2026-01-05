@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+import org.apache.logging.log4j.Logger;
+
+import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerDBModel;
 
 public class CustomerDao {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerDao.class);
 	private static final String CUSTOMER_DETAILS_QUERY = 
 			"""
 			 SELECT * FROM tr_customer where id = ?  
@@ -18,6 +21,7 @@ public class CustomerDao {
 	
 	
 	public static CustomerDBModel getCustomerinfo(int customerId) {
+		log.info("Entry");
 		Connection conn=null;
 		 ResultSet result= null; 
 		 PreparedStatement statement=null;
@@ -36,6 +40,7 @@ public class CustomerDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 log.info("Exit");
 		 return customermodel;
 		 
 	}
