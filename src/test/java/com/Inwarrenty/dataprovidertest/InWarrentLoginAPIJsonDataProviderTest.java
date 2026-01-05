@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.lang.module.ModuleDescriptor.Requires;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Utils.SpecUtils;
@@ -19,6 +20,7 @@ import static  com.Inwarrenty.Utils.ConfigManager.*;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
+@Listeners(com.listener.APITestListener.class)
 public class InWarrentLoginAPIJsonDataProviderTest {
 	
 	private static AuthService authservice;

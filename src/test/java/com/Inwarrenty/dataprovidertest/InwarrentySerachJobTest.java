@@ -3,6 +3,7 @@ package com.Inwarrenty.dataprovidertest;
 import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Roles;
@@ -12,6 +13,7 @@ import com.Inwarrenty.db.model.SearchJobModel;
 import com.Inwarrenty.servicepackage.CreateJobService;
 import com.Inwarrenty.servicepackage.DashBoardCountService;
 
+@Listeners(com.listener.APITestListener.class)
 public class InwarrentySerachJobTest {
 
 	private SearchJobModel searchmodel;
