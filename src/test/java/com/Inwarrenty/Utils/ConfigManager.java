@@ -7,21 +7,27 @@ import java.util.Properties;
 
 import javax.management.RuntimeErrorException;
 
+import org.apache.logging.log4j.Logger;
+
 public class ConfigManager {
 
 	private static Properties prop = new Properties();
 	private static String path = "Config/config.properties";
 	private static String env;
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(ConfigManager.class);
 
 	private ConfigManager() {
 
 	}
 
 	static {
+		log.info("Enter : the Static block");
+		log.info("UserDir Path {} ",System.getProperty("user.dir"));
 		System.out.println(System.getProperty("user.dir"));
 
 		env = System.getProperty("env", "qa");
 		env = env.toLowerCase().trim();
+		log.info("Running the Test in the Env {} ",env);
 		switch (env) {
 		case "dev" -> path = "Config/config.dev.properties";
 
@@ -31,13 +37,16 @@ public class ConfigManager {
 		}
 
 		InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
+		log.info("File path {}",input);
 		if (input == null) {
+			log.error("File cannot be Null input {}",input);
 			throw new RuntimeException("File cannot be Null" + input);
 		}
 		try {
 
 			prop.load(input);
 		} catch (FileNotFoundException e) {
+			
 
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -45,7 +54,8 @@ public class ConfigManager {
 			e.printStackTrace();
 		}
 
-		System.out.println(prop.getProperty("BASE_URL"));
+		
+		log.info("BaseURl url {}",prop.getProperty("BASE_URL"));
 
 	}
 

@@ -3,6 +3,8 @@ package com.Inwarrenty.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.dataproviderbean.CreateJobBean;
 import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.Customer;
@@ -12,6 +14,7 @@ import com.Inwarrenty.request.model.Problems;
 
 
 public class CreateJobBeanMapper {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CreateJobBeanMapper.class);
 	
 	private CreateJobBeanMapper() {
 		
@@ -19,6 +22,8 @@ public class CreateJobBeanMapper {
 	
 	public static CreateJobAPIPayload mapper(CreateJobBean bean)
 	{
+		log.info("Enter the CreateJobAPIPayload method bean{}",bean);
+		
 		int mstservicelocationid = Integer.parseInt(bean.getMst_service_location_id());
 		int mstplatformid = Integer.parseInt(bean.getMst_platform_id());
 		int mstwarrentystatusid = Integer.parseInt(bean.getMst_warrenty_status_id());
@@ -58,6 +63,7 @@ public class CreateJobBeanMapper {
 		problemlist.add(problem);
 		
 		CreateJobAPIPayload payload = new CreateJobAPIPayload(mstservicelocationid, mstplatformid, mstwarrentystatusid, Mstoemid, customer, customerAddress, customerproduct, problemlist);
+		log.info("Exit:: Created CreateJobAPIPayload payload {}",payload);
 		return payload;
 	}
 }

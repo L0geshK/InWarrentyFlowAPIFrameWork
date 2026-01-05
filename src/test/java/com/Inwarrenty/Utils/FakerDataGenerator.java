@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.Customer;
 import com.Inwarrenty.request.model.CustomerAddress;
@@ -14,6 +16,8 @@ import com.Inwarrenty.request.model.Problems;
 import com.github.javafaker.Faker;
 
 public class FakerDataGenerator {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(FakerDataGenerator.class);
+
 
 	private FakerDataGenerator() {
 
@@ -32,17 +36,20 @@ public class FakerDataGenerator {
 			26, 27, 28, 29 };
 
 	public static CreateJobAPIPayload generateFakeCreateJobData() {
+		log.info("Enter : the generateFakeCreateJobData with facker");
 		Customer customer = generateFakeCustomerData();
 		CustomerAddress customerAddress = generateFakeCustomerAddress();
 		CustomerProduct customerproduct = generateFakeCustomerProduct();
 		List<Problems> problemsList = generateFakeProblemsList();
 		CreateJobAPIPayload payload = new CreateJobAPIPayload(MST_SERVICE_LOCATION_ID, MST_PLATFORM_ID, MST_MODEL_ID,
 				MST_OEM_ID, customer, customerAddress, customerproduct, problemsList);
+		log.info("Exit : the generateFakeCreateJobData with facker payload {}",payload);
 		return payload;
 
 	}
 
 	public static Iterator<CreateJobAPIPayload> generateFakeCreateJobData(int count) {
+		log.info("Enter: the generateFakeCreateJobData count {}",count);
 		List<CreateJobAPIPayload> payloadlist = new ArrayList<CreateJobAPIPayload>();
 		for (int i = 1; i <= count; i++) {
 			Customer customer = generateFakeCustomerData();

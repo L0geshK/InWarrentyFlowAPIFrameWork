@@ -5,8 +5,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.Utils.ConfigManager;
 import com.Inwarrenty.Utils.EnvUtils;
+import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.Utils.VaultDBConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -24,6 +27,7 @@ public class DataBaseManagerWithHikariCP {
 	private volatile static HikariDataSource ds;
 	private static Connection conn;
 	private static boolean isVaultup;
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(DataBaseManagerWithHikariCP.class);
 
 	private DataBaseManagerWithHikariCP() {
 
@@ -32,9 +36,9 @@ public class DataBaseManagerWithHikariCP {
 	static {
 		try {
 			isVaultup=true;
-			DB_URL = VaultDBConfig.getSecret("DB_URL");
-			DB_USERNAME = VaultDBConfig.getSecret("DB_USERNAME");
-			DB_PASSWORD = VaultDBConfig.getSecret("DB_PASSWORD");
+			DB_URL = ConfigManager.getProperty("DB_URL");
+			DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
+			DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
 			MAXIMUN_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUN_POOL_SIZE"));
 			MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
 			CONNECTION_TIMEOUT_IN_SEC = Integer.parseInt(ConfigManager.getProperty("CONNECTION_TIMEOUT_IN_SEC"));
@@ -43,12 +47,14 @@ public class DataBaseManagerWithHikariCP {
 			HIKARI_CP_POOL_NAME = ConfigManager.getProperty("HIKARI_CP_POOL_NAME");
 
 		} catch (IOException e) {
+			log.error("Somthing went wrong while reading config details!!");
 			e.printStackTrace();
 		}
 	}
 
 	public static void initializepool() {
 		if (ds == null) {
+			log.info("DataBase Connection not Available...Creating hikariDatasource");
 			synchronized (DataBaseManagerWithHikariCP.class) {
 				if (ds == null) {
 					HikariConfig hikarconfig = new HikariConfig();
@@ -63,6 +69,7 @@ public class DataBaseManagerWithHikariCP {
 					hikarconfig.setPoolName(HIKARI_CP_POOL_NAME);
 
 					ds = new HikariDataSource(hikarconfig);
+					log.info("DataBase Connection Creating with  hikariDatasource");
 
 				}
 
@@ -73,9 +80,12 @@ public class DataBaseManagerWithHikariCP {
 	}
 
 	public static Connection getConnecction() throws SQLException {
+		log.info("Enter");
 		conn = null;
 		if (ds == null) {
+			
 			initializepool();
+			log.info("initializepool Method calling!!!");
 
 		} else if (ds.isClosed()) {
 			throw new SQLException("Hikari Connection is closed");
@@ -83,9 +93,12 @@ public class DataBaseManagerWithHikariCP {
 
 		try {
 			conn = ds.getConnection();
+			
 		} catch (SQLException e) {
+			log.error("Somthing went Wrong With database connection",e);
 			e.printStackTrace();
 		}
+		log.info("Exit:Connection established");
 		return conn;
 
 	}
@@ -99,10 +112,12 @@ public class DataBaseManagerWithHikariCP {
 		value=VaultDBConfig.getSecret(key);
 		}
 		if(value ==null) {
-			System.err.println("Vault is Down!!!!");
+			log.error("Vault is Down!!!!");
+			
 			isVaultup=false;
 		}else {
-			System.out.println("Reading value from vault");
+			log.info("Reading value from vault");
+			
 		}
 		value = EnvUtils.getValue(key);
 		return value;

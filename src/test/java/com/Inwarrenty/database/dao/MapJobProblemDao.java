@@ -5,11 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.Logger;
+
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
-import com.Inwarrenty.db.model.CustomerDBModel;
 import com.Inwarrenty.db.model.MapJobProblemDBModel;
 
 public class MapJobProblemDao {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(MapJobProblemDao.class);
+	
 	private static final String PROBLEM_QUERY="""
 			SELECT * from map_job_problem where tr_job_head_id=?;
 			""";
@@ -20,6 +23,8 @@ private MapJobProblemDao() {
 	
 	
 	public static MapJobProblemDBModel getProblemDetails(int tr_job_head_id) {
+		log.info("Entry");
+		
 		Connection conn=null;
 		 ResultSet result= null; 
 		 PreparedStatement statement=null;
@@ -38,6 +43,7 @@ private MapJobProblemDao() {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 log.info("Exit");
 		 return mapjobproblemmodel;
 		
 	}

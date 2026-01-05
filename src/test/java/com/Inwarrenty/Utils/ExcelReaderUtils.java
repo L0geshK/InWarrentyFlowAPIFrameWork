@@ -6,18 +6,19 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.ss.formula.functions.T;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.Inwarrenty.dataproviderbean.UserPOJO;
 import com.Inwarrenty.request.model.UserCredentials;
 import com.poiji.bind.Poiji;
 
 public class ExcelReaderUtils {
+	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(ExcelReaderUtils.class);
+
 
 	private ExcelReaderUtils() {
 
@@ -46,6 +47,7 @@ public class ExcelReaderUtils {
 	}
 
 	public static Iterator<UserCredentials> loadTestData()  {
+		log.info("Enter: the LoadTestData from Excell");
 
 		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("TestData/TestData.xlsx");
 		XSSFWorkbook workbook = null;
@@ -79,12 +81,14 @@ public class ExcelReaderUtils {
 			userlist.add(usercredentials);
 
 		}
+		log.info("Exit: the LoadTestData from Excell with userlist {}",userlist);
 		return userlist.iterator();
 
 	}
 	
 	public static <T> Iterator<T> loadTestDataUsingPoiji(String xlsxFile, String sheetName, Class<T> clazz)  {
 		// APACHE POI OOXML LIB
+		log.info("Enter: the loadTestDataUsingPoiji with file{} with name {}",xlsxFile,sheetName);
 		InputStream is = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream(xlsxFile);  
 		XSSFWorkbook myWorkBook = null;
@@ -99,6 +103,7 @@ public class ExcelReaderUtils {
 		XSSFSheet mySheet = myWorkBook.getSheet(sheetName);   
 		
 		List<T> list=Poiji.fromExcel(mySheet, clazz);
+		log.info("Exit:loadTestDataUsingPoiji with data {}",list);
 		return list.iterator();
 	}
 
