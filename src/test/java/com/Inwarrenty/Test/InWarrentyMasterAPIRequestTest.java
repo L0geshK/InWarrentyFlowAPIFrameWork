@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.lessThan;
 import java.io.IOException;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Roles;
@@ -21,6 +22,7 @@ import static com.Inwarrenty.Utils.AuthTokenProvider.getToken;
 import static com.Inwarrenty.Utils.ConfigManager.getProperty;
 import static  io.restassured.RestAssured.*;
 
+@Listeners(com.listener.APITestListener.class)
 public class InWarrentyMasterAPIRequestTest {
 	
 	

@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.hamcrest.Matcher;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Roles;
@@ -11,6 +12,7 @@ import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.db.model.DetailsModels;
 import com.Inwarrenty.servicepackage.DashBoardCountService;
 
+@Listeners(com.listener.APITestListener.class)
 public class InwarrentyDetailsAPITest {
 	private DashBoardCountService dashboardservice;
 	private DetailsModels details;

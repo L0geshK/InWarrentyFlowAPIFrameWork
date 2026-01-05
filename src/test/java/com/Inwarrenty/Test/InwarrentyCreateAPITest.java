@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Inwarrenty.Constants.Models;
@@ -28,7 +29,7 @@ import com.Inwarrenty.request.model.Problems;
 import com.Inwarrenty.servicepackage.CreateJobService;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
-
+@Listeners(com.listener.APITestListener.class)
 public class InwarrentyCreateAPITest {
 	 private CreateJobAPIPayload createJobAPIPayload;
 	 private CreateJobService createjobservice;

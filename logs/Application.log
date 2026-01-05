@@ -66,3 +66,19 @@
 2026-01-05 22:25:47 [TestNG-PoolService-4] INFO com.Inwarrenty.servicepackage.CreateJobService::getCreateJob::36  Exit 
 2026-01-05 22:25:47 [TestNG-PoolService-1] INFO com.Inwarrenty.servicepackage.CreateJobService::getCreateJob::36  Exit 
 2026-01-05 22:25:47 [TestNG-PoolService-3] INFO com.Inwarrenty.servicepackage.CreateJobService::getCreateJob::36  Exit 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onStart::44  ********* Started InWarrentyFlow API TESTCASE************* 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onTestStart::15  Started the test loginApiTest 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onTestStart::16  test class [TestClass name=class com.Inwarrenty.Test.InWarrentLoginAPITest] 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onTestStart::17  test class description Verifying if login API is Working for FD User!!! 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onTestStart::18  test class Groups [regression, api, Smoke] 
+2026-01-05 23:13:04 [main] INFO com.listener.APITestListener::onTestStart::19  test class DataProvider null 
+2026-01-05 23:13:04 [main] INFO com.Inwarrenty.servicepackage.AuthService::login::19  Enter:Make the login request with payload/login :iamfd 
+2026-01-05 23:13:05 [main] INFO com.Inwarrenty.Utils.ConfigManager::<clinit>::24  Enter : the Static block 
+2026-01-05 23:13:05 [main] INFO com.Inwarrenty.Utils.ConfigManager::<clinit>::25  UserDir Path C:\Users\loges\eclipse-workspace\InWarrentyFlowAPIFrameWork  
+2026-01-05 23:13:05 [main] INFO com.Inwarrenty.Utils.ConfigManager::<clinit>::30  Running the Test in the Env qa  
+2026-01-05 23:13:05 [main] INFO com.Inwarrenty.Utils.ConfigManager::<clinit>::40  File path java.io.BufferedInputStream@730e5763 
+2026-01-05 23:13:05 [main] INFO com.Inwarrenty.Utils.ConfigManager::<clinit>::58  BaseURl url http://64.227.160.186:9000/v1 
+2026-01-05 23:13:07 [main] INFO com.Inwarrenty.servicepackage.AuthService::login::29  Exit 
+2026-01-05 23:13:09 [main] INFO com.listener.APITestListener::onTestSuccess::26  Total Duraction: 4911 ms 
+2026-01-05 23:13:09 [main] INFO com.listener.APITestListener::onTestSuccess::27  loginApiTest- TestPassed !! 
+2026-01-05 23:13:09 [main] INFO com.listener.APITestListener::onFinish::49  ********* Finish 	************* 
