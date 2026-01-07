@@ -4,7 +4,11 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com.Inwarrenty.Test.InWarrentLoginAPITest" />
+			<class name="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker" />
+			<class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest" />
 			<class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest" />
+			<class name="com.Inwarrenty.Test.InwarrentyDetailsAPITest" />
+			<class name="com.Inwarrenty.Test.InwarrentySerachJobTest" />
 			<class
 				name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest" />
 			<class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest" />
