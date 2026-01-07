@@ -13,7 +13,7 @@ public class ConfigManager {
 
 	private static Properties prop = new Properties();
 	private static String path = "Config/config.properties";
-	private static String env;
+	public static String env;
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(ConfigManager.class);
 
 	private ConfigManager() {

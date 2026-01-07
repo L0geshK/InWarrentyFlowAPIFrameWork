@@ -7,6 +7,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.Inwarrenty.Utils.AllureEnvironmentWriterUtil;
+
 public class APITestListener implements ITestListener {
 
 	private static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(APITestListener.class);
@@ -42,6 +44,7 @@ public class APITestListener implements ITestListener {
 
 	public void onStart(ITestContext context) {
 		log.info("********* Started InWarrentyFlow API TESTCASE*************");
+		AllureEnvironmentWriterUtil.createEnvironmentPropertiesFile();
 
 	}
 
