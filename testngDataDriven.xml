@@ -2,11 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Phoenix API Test Suit">
   <test thread-count="5" name="InWarrenty Flow Testing">
-   <groups>
-        <run>
-            <include name="${groups}"/>   <!-- Read from Maven -->
-        </run>
-    </groups>
+  
   
     <classes>
       <class name="com.Inwarrenty.dataprovidertest.InWarrentLoginAPIDataProviderTest"/>
