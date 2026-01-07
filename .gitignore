@@ -6,3 +6,4 @@
 /.env
 /logs/
 /allure-results/
+.allure/
