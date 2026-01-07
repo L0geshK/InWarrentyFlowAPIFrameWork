@@ -94,12 +94,6 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.5.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>automaction-assigment</groupId>
-			<artifactId>automaction-assigment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
 		<dependency>
 			<groupId>com.github.ozlerhakan</groupId>
