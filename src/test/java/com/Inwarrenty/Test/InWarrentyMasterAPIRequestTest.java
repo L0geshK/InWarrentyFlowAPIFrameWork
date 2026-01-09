@@ -13,6 +13,12 @@ import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.servicepackage.MasterService;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
@@ -23,6 +29,8 @@ import static com.Inwarrenty.Utils.ConfigManager.getProperty;
 import static  io.restassured.RestAssured.*;
 
 @Listeners(com.listener.APITestListener.class)
+@Epic("Job Management")
+@Feature("Master API")
 public class InWarrentyMasterAPIRequestTest {
 	
 	
@@ -36,7 +44,9 @@ public class InWarrentyMasterAPIRequestTest {
 	}
 	
 	
-	
+	@Story("Master API Show ALL API's")
+	@Description("Verifying the Master api is giving correct responc")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "Verifying the Master api is giving correct responce",groups = {"api","regression","smoke"})
 	public void masterAPI() {
 		masterservice.getMaster(Roles.FD)
@@ -74,8 +84,9 @@ public class InWarrentyMasterAPIRequestTest {
 		
 		
 	}
-	
-	
+	@Story("Master Not able to Show ALL API's")
+	@Description("Verifying the Master api is giving correct status code for invalid token")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "Verifying the Master api is giving correct status code for invalid token",groups = {"api","regression","smoke","negative"})
 	public void masterAPI_missingAuthToken() {
 		masterservice.getMasterwithNoAuth().then()

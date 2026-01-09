@@ -16,6 +16,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.Inwarrenty.request.model.UserCredentials;
 import com.poiji.bind.Poiji;
 
+import io.qameta.allure.Step;
+
 public class ExcelReaderUtils {
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(ExcelReaderUtils.class);
 
@@ -46,6 +48,7 @@ public class ExcelReaderUtils {
 
 	}
 
+	@Step("LoadTest Data From Excell")
 	public static Iterator<UserCredentials> loadTestData()  {
 		log.info("Enter: the LoadTestData from Excell");
 
@@ -85,7 +88,7 @@ public class ExcelReaderUtils {
 		return userlist.iterator();
 
 	}
-	
+	@Step("LoadTest Data From ExcellPoiji")
 	public static <T> Iterator<T> loadTestDataUsingPoiji(String xlsxFile, String sheetName, Class<T> clazz)  {
 		// APACHE POI OOXML LIB
 		log.info("Enter: the loadTestDataUsingPoiji with file{} with name {}",xlsxFile,sheetName);

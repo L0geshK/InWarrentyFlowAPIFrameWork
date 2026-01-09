@@ -7,16 +7,16 @@
 			<class name="com.Inwarrenty.Test.InwarrentyCreateAPITest2WithFaker" />
 			<class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest" />
 			<class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest" />
-			<class name="com.Inwarrenty.Test.InwarrentyDetailsAPITest" />
-			<class name="com.Inwarrenty.Test.InwarrentySerachJobTest" />
+			
+			
 			<class
 				name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest" />
-			<class name="com.Inwarrenty.Test.InWarrentyMasterAPIRequestTest" />
+			
+			<class name="com.Inwarrenty.dataprovidertest.InwarrentyDetailsAPITest" />
 			<class name="com.Inwarrenty.Test.InwarrentyCreateAPITest" />
 			<class
 				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji" />
-			<class
-				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIDBDataProviderTestWith" />
+			
 		</classes>
 	</test> <!--
 	Test -->

@@ -23,11 +23,19 @@ import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.servicepackage.DashBoardCountService;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 
 @Listeners(com.listener.APITestListener.class)
+@Epic("Job Management")
+@Feature("Job Count")
 public class InWarrentCountAPIRequestForFrontDeskTest {
 	private DashBoardCountService countAPi;
 	
@@ -41,7 +49,10 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 	
 	
 	
-
+	
+    @Story("Verifying the Count  api ")
+    @Description("Verifying the Count  api is giving correct responce form the FrontDesk")
+    @Severity(SeverityLevel.CRITICAL)
 	@Test(description = "Verifying the Count  api is giving correct responce form the FrontDesk",groups = {"api","regression","smoke"})
 	public void getCountAPIFrontDesl() {
 
@@ -58,7 +69,9 @@ public class InWarrentCountAPIRequestForFrontDeskTest {
 
 	}
 
-	
+    @Story("Verifying Count api gave Incorrect Respoce for Authtoken Missing case ")
+    @Description("Verifying the Count  api is giving correct status code for invalid token")
+    @Severity(SeverityLevel.CRITICAL)
 	@Test(description = "Verifying the Count  api is giving correct status code for invalid token",groups = {"api","regression","smoke","negative"})
 	public void countAPI_missingAuthToken() {
 		countAPi.getCountwithNoAuth()

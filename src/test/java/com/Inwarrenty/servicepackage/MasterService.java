@@ -10,12 +10,14 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.Utils.SpecUtils;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 public class MasterService {
 	private static final String MASTER_ENDPOINT = "/master";
 	private Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(this.getClass());
 
+	@Step("Make the Master Request")
 	public Response getMaster(Roles role) {
 		log.info("Enter: Master API with role {} with Endpoint {}",role,MASTER_ENDPOINT);
 
@@ -32,6 +34,7 @@ public class MasterService {
 
 	}
 
+	@Step("Make the Master Request with NO AUTH")
 	public Response getMasterwithNoAuth() {
 		log.info("Enter: Master API with Endpoint {}",MASTER_ENDPOINT);
 

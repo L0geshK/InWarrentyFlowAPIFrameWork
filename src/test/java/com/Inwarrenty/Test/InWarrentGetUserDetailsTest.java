@@ -14,9 +14,17 @@ import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.servicepackage.UserDetailsService;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 @Listeners(com.listener.APITestListener.class)
+@Epic("User Management")
+@Feature("User Details")
 public class InWarrentGetUserDetailsTest {
 	
 	private static  UserDetailsService userdetail;
@@ -29,6 +37,9 @@ public class InWarrentGetUserDetailsTest {
 	}
 	
 	
+	@Story("User Details Should be Shown")
+	@Description("the API get the user details")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "Verifying the API get the Correct Responce",groups = {"api","regression","smoke"})
 	public void getUserDetails() throws IOException {
 		

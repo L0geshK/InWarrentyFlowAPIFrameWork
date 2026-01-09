@@ -11,6 +11,8 @@ import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerAddressDBModel;
 
+import io.qameta.allure.Step;
+
 public class CustomerAddressDao {
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerAddressDao.class);
 	private static final String CUSTOMER_ADD_QUERY = """
@@ -31,6 +33,7 @@ public class CustomerAddressDao {
 
 	}
 
+	@Step("Reterving Data from DB for CustomerAddressDBModel")
 	public static CustomerAddressDBModel getCustomerAddressData(int customerAddressId) {
 		log.info("Entry");
 		Connection conn = null;

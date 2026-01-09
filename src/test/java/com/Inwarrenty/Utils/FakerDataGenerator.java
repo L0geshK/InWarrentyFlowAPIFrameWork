@@ -15,6 +15,8 @@ import com.Inwarrenty.request.model.CustomerProduct;
 import com.Inwarrenty.request.model.Problems;
 import com.github.javafaker.Faker;
 
+import io.qameta.allure.Step;
+
 public class FakerDataGenerator {
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(FakerDataGenerator.class);
 
@@ -35,6 +37,7 @@ public class FakerDataGenerator {
 	private final static int validProblemsId[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 19, 20, 22, 24,
 			26, 27, 28, 29 };
 
+	@Step("Generating Fake Create Job Data")
 	public static CreateJobAPIPayload generateFakeCreateJobData() {
 		log.info("Enter : the generateFakeCreateJobData with facker");
 		Customer customer = generateFakeCustomerData();
@@ -48,6 +51,7 @@ public class FakerDataGenerator {
 
 	}
 
+	@Step("Generating Fake Create Job Data With Count")
 	public static Iterator<CreateJobAPIPayload> generateFakeCreateJobData(int count) {
 		log.info("Enter: the generateFakeCreateJobData count {}",count);
 		List<CreateJobAPIPayload> payloadlist = new ArrayList<CreateJobAPIPayload>();
@@ -65,6 +69,7 @@ public class FakerDataGenerator {
 
 	}
 
+	@Step("Generating Fake Problem  Data")
 	private static List<Problems> generateFakeProblemsList() {
 		int count = random.nextInt(3) + 1;
 		int randomIndex;
@@ -82,6 +87,7 @@ public class FakerDataGenerator {
 		return problemList;
 	}
 
+	@Step("Generating Fake CustomerProduct  Data")
 	private static CustomerProduct generateFakeCustomerProduct() {
 
 		String dop = DateTimeUtils.getTimeWithDaysAgo(10);
@@ -93,6 +99,7 @@ public class FakerDataGenerator {
 		return customerProduct;
 	}
 
+	@Step("Generating Fake CustomerAddress  Data")
 	private static CustomerAddress generateFakeCustomerAddress() {
 		String flatNumber = faker.numerify("###");
 		String apartmentName = faker.address().streetName();
@@ -108,6 +115,7 @@ public class FakerDataGenerator {
 		return customerAddress;
 	}
 
+	@Step("Generating Fake Customer  Data")
 	private static Customer generateFakeCustomerData() {
 		String fname = faker.name().firstName();
 		String lname = faker.name().lastName();

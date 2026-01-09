@@ -30,9 +30,17 @@ import com.Inwarrenty.request.model.CustomerAddress;
 import com.Inwarrenty.request.model.CustomerProduct;
 import com.Inwarrenty.servicepackage.CreateJobService;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 @Listeners(com.listener.APITestListener.class)
+@Epic("Job Management")
+@Feature("Create Job")
 public class InwarrentyCreateAPITest2WithFaker {
 	 private CreateJobAPIPayload createJobAPIPayload;
 	 private CreateJobService createjobservice;
@@ -47,7 +55,9 @@ public class InwarrentyCreateAPITest2WithFaker {
 		 createjobservice = new CreateJobService();
 	}
 	
-	
+	@Story("Able To Create New Job With Faker")
+	@Description("Verifying if the  Create api is able to Create InWarrenty Job")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "Verifying if the  Create api is able to Create InWarrenty Job ",groups = {"api","regression","smoke"})
 	public void createJobApi() throws IOException {
 		

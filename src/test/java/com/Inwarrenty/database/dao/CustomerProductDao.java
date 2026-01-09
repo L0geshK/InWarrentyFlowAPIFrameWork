@@ -10,6 +10,8 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerProductDBModel;
 
+import io.qameta.allure.Step;
+
 public class CustomerProductDao {
 	
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerProductDao.class);
@@ -24,6 +26,7 @@ public class CustomerProductDao {
 		
 	}
 	
+	@Step("Reterving Data from DB for CustomerProductDBModel")
 	public static CustomerProductDBModel getproductInfoFromDB(int tr_customer_product_id) {
 		log.info("Entry");
 		Connection conn = null;
