@@ -19,6 +19,8 @@
 				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji" />
 				<class
 				name="com.Inwarrenty.dataprovidertest.InwarrentySerachJobTest" />
+				<class
+				name="com.Inwarrenty.dataprovidertest.InwarrentySerachJobTest" />
 			
 		</classes>
 	</test> <!--
