@@ -3,6 +3,7 @@ package com.Inwarrenty.Utils;
 import org.apache.logging.log4j.Logger;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import io.qameta.allure.Step;
 
 public class EnvUtils {
 	private static Dotenv dotenv;
@@ -17,7 +18,7 @@ public class EnvUtils {
 	private EnvUtils() {
 		
 	}
-	
+	@Step("Retriving the Secret From .evn")
 	public static String getValue(String varName) {
 		log.info("Get the varname {}",varName);
 		return dotenv.get(varName);

@@ -13,13 +13,15 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.request.model.UserCredentials;
 
+import io.qameta.allure.Step;
+
 public class AuthTokenProvider {
 	
 	private static Map<Roles,String>tokencache = new ConcurrentHashMap<Roles, String>();
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(AuthTokenProvider.class);
 	
 	
-	
+	@Step("Getting Auth Token For the Role")
 	public static String getToken(Roles role) {	
 		log.info(" Enter :Check the token for the role {} is present in the cache",role);
 		

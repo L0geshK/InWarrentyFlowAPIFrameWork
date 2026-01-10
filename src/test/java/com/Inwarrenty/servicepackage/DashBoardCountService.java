@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.Constants.Roles;
 import com.Inwarrenty.Utils.SpecUtils;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 public class DashBoardCountService {
@@ -18,6 +19,7 @@ public class DashBoardCountService {
 	private static final String DETAILS_ENDPOINT="/dashboard/details";
 	private Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(this.getClass());
 
+	@Step("Making the count request with Role")
 	public Response getCount(Roles role) {
 		log.info("Enter: Create count api with Role {} with ENDPOINT {} :",role,COUNT_ENDPONT);
 
@@ -34,6 +36,7 @@ public class DashBoardCountService {
 
 	}
 
+	@Step("Making the count request without Auth Token")
 	public Response getCountwithNoAuth() {
 		log.info("Enter: getCountwithNoAuth ENDPOINT {} ",COUNT_ENDPONT);
 
@@ -51,7 +54,7 @@ public class DashBoardCountService {
 		return response;
 
 	}
-	
+	@Step("Making Details API Request")
 	public Response getDetails(Roles role,Object Payload) {
 		log.info("Enter: GetDetails api with Role {} with Payload {}  with ENDPOINT {} ",role,Payload,DETAILS_ENDPOINT);
 

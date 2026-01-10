@@ -2,17 +2,17 @@ package com.Inwarrenty.database;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import org.apache.logging.log4j.Logger;
 
 import com.Inwarrenty.Utils.ConfigManager;
 import com.Inwarrenty.Utils.EnvUtils;
-import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.Utils.VaultDBConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import io.qameta.allure.Step;
 
 public class DataBaseManagerWithHikariCP {
 	private static String DB_URL;
@@ -52,6 +52,7 @@ public class DataBaseManagerWithHikariCP {
 		}
 	}
 
+	@Step("DataBase initializepool")
 	public static void initializepool() {
 		if (ds == null) {
 			log.info("DataBase Connection not Available...Creating hikariDatasource");
@@ -79,6 +80,7 @@ public class DataBaseManagerWithHikariCP {
 
 	}
 
+	@Step(" Getting DataBase Connection")
 	public static Connection getConnecction() throws SQLException {
 		log.info("Enter");
 		conn = null;

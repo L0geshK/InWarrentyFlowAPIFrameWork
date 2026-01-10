@@ -9,6 +9,8 @@ import javax.management.RuntimeErrorException;
 
 import org.apache.logging.log4j.Logger;
 
+import io.qameta.allure.Step;
+
 public class ConfigManager {
 
 	private static Properties prop = new Properties();
@@ -20,6 +22,7 @@ public class ConfigManager {
 
 	}
 
+	
 	static {
 		log.info("Enter : the Static block");
 		log.info("UserDir Path {} ",System.getProperty("user.dir"));
@@ -59,6 +62,7 @@ public class ConfigManager {
 
 	}
 
+	@Step("Getting the Property Value from 	the Config File")
 	public static String getProperty(String Key) throws IOException {
 
 		return prop.getProperty(Key);

@@ -15,11 +15,20 @@ import com.Inwarrenty.request.model.UserCredentials;
 import com.Inwarrenty.servicepackage.AuthService;
 
 import static  com.Inwarrenty.Utils.ConfigManager.*;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 
 @Listeners(com.listener.APITestListener.class)
+@Epic("User Management")
+@Feature("Authentication")
 public class InWarrentLoginAPITest {
 	
 	private UserCredentials userCredentials;
@@ -34,7 +43,9 @@ public class InWarrentLoginAPITest {
 	}
 	
 	
-	
+	@Story("Valid User Should Able to Login into the Application")
+	@Description("Verify if FD User is able login via api")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "Verifying if login API is Working for FD User!!!", groups = {"api","Smoke","regression"})
 	public void loginApiTest() throws IOException {
 		

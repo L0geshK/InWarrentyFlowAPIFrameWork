@@ -10,6 +10,8 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.JobHeadDBModel;
 
+import io.qameta.allure.Step;
+
 public class JobHeadDao {
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(JobHeadDao.class);
 	private static final String JOB_HEAD_QUERY="""
@@ -22,6 +24,7 @@ public class JobHeadDao {
 		
 	}
 	
+	@Step("Reterving Data from DB for JobHeadDBModel")
 	public static JobHeadDBModel getJobHeadDetails(int tr_customer_id) {
 		log.info("Entry");
 		Connection conn=null;

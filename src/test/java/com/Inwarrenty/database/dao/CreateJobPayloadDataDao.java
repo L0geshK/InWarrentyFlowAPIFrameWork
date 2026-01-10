@@ -12,6 +12,8 @@ import org.apache.logging.log4j.Logger;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.dataproviderbean.CreateJobBean;
 
+import io.qameta.allure.Step;
+
 public class CreateJobPayloadDataDao {
 	
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CreateJobPayloadDataDao.class);
@@ -57,6 +59,7 @@ public class CreateJobPayloadDataDao {
 
 						""";
 	
+	@Step("Reterving Data from DB for CreateAPI test")
 	public static List<CreateJobBean> getCreatePayloadData() {	
 		log.info("Entry");
 		Connection conn=null;

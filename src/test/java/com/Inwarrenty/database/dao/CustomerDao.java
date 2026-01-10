@@ -7,9 +7,10 @@ import java.sql.SQLException;
 
 import org.apache.logging.log4j.Logger;
 
-import com.Inwarrenty.Utils.JsonReaderUtil;
 import com.Inwarrenty.database.DataBaseManagerWithHikariCP;
 import com.Inwarrenty.db.model.CustomerDBModel;
+
+import io.qameta.allure.Step;
 
 public class CustomerDao {
 	private  static Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(CustomerDao.class);
@@ -19,7 +20,7 @@ public class CustomerDao {
 			""";
 			
 	
-	
+	@Step("Reterving Data from DB for CustomerDBModel")
 	public static CustomerDBModel getCustomerinfo(int customerId) {
 		log.info("Entry");
 		Connection conn=null;

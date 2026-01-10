@@ -12,6 +12,7 @@ import com.Inwarrenty.Utils.SpecUtils;
 import com.Inwarrenty.request.model.CreateJobAPIPayload;
 import com.Inwarrenty.request.model.UserCredentials;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 public class CreateJobService {
@@ -19,6 +20,9 @@ public class CreateJobService {
 	private static final String SEARCH_ENDPOINT = "/job/search";
 	private Logger log = com.Inwarrenty.Utils.LoggerUtlity.getLogger(this.getClass());
 
+	
+	
+	@Step("Creating Inwarrenty Job wth Role and Payload")
 	public Response getCreateJob(Roles role, Object createJobAPIPayload) {
 		log.info("Enter:Createing the job with Role {} for the payload {} with  end point {}:",role,createJobAPIPayload,CREATEJOB_ENDPOINT);
 
@@ -40,6 +44,7 @@ public class CreateJobService {
 
 	}
 
+	@Step("Search Job wth Role and Payload")
 	public Response getSearchJob(Roles role, Object payload) {
 		log.info("Enter:Search the job with Role {} for the payload {} with  SearchEnd  point {}",role,payload,SEARCH_ENDPOINT);
 
