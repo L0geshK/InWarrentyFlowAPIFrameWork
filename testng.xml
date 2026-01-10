@@ -9,6 +9,7 @@
 			<class name="com.Inwarrenty.Test.InWarrentGetUserDetailsTest" />
 			
 			
+			
 			<class
 				name="com.Inwarrenty.Test.InWarrentCountAPIRequestForFrontDeskTest" />
 			
@@ -16,6 +17,8 @@
 			<class name="com.Inwarrenty.Test.InwarrentyCreateAPITest" />
 			<class
 				name="com.Inwarrenty.dataprovidertest.InwarrentyCreateAPIExcelDataProviderTestWithPoiji" />
+				<class
+				name="com.Inwarrenty.dataprovidertest.InwarrentySerachJobTest" />
 			
 		</classes>
 	</test> <!--
