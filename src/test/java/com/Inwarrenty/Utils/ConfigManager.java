@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import javax.management.RuntimeErrorException;
-
 import org.apache.logging.log4j.Logger;
 
 import io.qameta.allure.Step;
