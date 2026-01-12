@@ -46,7 +46,7 @@ public class InWarrentLoginAPITest {
 	@Story("Valid User Should Able to Login into the Application")
 	@Description("Verify if FD User is able login via api")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(description = "Verifying if login API is Working for FD User!!!", groups = {"api","Smoke","regression"})
+	@Test(description = "Verifying if login API is Working for FD User!!!", groups = {"api","Smoke","regression"},retryAnalyzer = com.Inwarrenty.retryAnalyzer.RetryAnalyzer.class)
 	public void loginApiTest() throws IOException {
 		
 		

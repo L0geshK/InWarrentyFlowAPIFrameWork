@@ -34,22 +34,16 @@ public class DataBaseManagerWithHikariCP {
 	}
 
 	static {
-		try {
-			isVaultup=true;
-			DB_URL = ConfigManager.getProperty("DB_URL");
-			DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
-			DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
-			MAXIMUN_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUN_POOL_SIZE"));
-			MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
-			CONNECTION_TIMEOUT_IN_SEC = Integer.parseInt(ConfigManager.getProperty("CONNECTION_TIMEOUT_IN_SEC"));
-			IDLE_TIMEOUT_SEC = Integer.parseInt(ConfigManager.getProperty("IDLE_TIMEOUT_SEC"));
-			MAX_LIFE_TIME_IN_MINS = Integer.parseInt(ConfigManager.getProperty("MAX_LIFE_TIME_IN_MINS"));
-			HIKARI_CP_POOL_NAME = ConfigManager.getProperty("HIKARI_CP_POOL_NAME");
-
-		} catch (IOException e) {
-			log.error("Somthing went wrong while reading config details!!");
-			e.printStackTrace();
-		}
+		isVaultup=true;
+		DB_URL = ConfigManager.getProperty("DB_URL");
+		DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
+		DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
+		MAXIMUN_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUN_POOL_SIZE"));
+		MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
+		CONNECTION_TIMEOUT_IN_SEC = Integer.parseInt(ConfigManager.getProperty("CONNECTION_TIMEOUT_IN_SEC"));
+		IDLE_TIMEOUT_SEC = Integer.parseInt(ConfigManager.getProperty("IDLE_TIMEOUT_SEC"));
+		MAX_LIFE_TIME_IN_MINS = Integer.parseInt(ConfigManager.getProperty("MAX_LIFE_TIME_IN_MINS"));
+		HIKARI_CP_POOL_NAME = ConfigManager.getProperty("HIKARI_CP_POOL_NAME");
 	}
 
 	@Step("DataBase initializepool")

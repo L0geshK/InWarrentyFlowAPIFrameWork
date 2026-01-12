@@ -18,13 +18,9 @@ public class DataBaseManager {
 	}
 
 	static {
-		try {
-			DB_URL = ConfigManager.getProperty("DB_URL");
-			DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
-			DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		DB_URL = ConfigManager.getProperty("DB_URL");
+		DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
+		DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
 	}
 
 	public static void CreateConnection() {
