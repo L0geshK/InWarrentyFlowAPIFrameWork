@@ -62,11 +62,22 @@ public class ConfigManager {
 
 	}
 
-	@Step("Getting the Property Value from 	the Config File")
-	public static String getProperty(String Key) throws IOException {
+//	@Step("Getting the Property Value from 	the Config File")
+//	public static String getProperty(String Key) throws IOException {
+//
+//		return prop.getProperty(Key);
+//
+//	}
+	@Step("Getting the Property Value from the Config File")
+	public static String getProperty(String key) {
 
-		return prop.getProperty(Key);
-
+	    try {
+	        return prop.getProperty(key);
+	    } catch (Exception e) {
+	    	log.error("Failed to read property value for key {}",key);
+	        throw new RuntimeException(
+	                "Failed to read property value for key: " + key, e);
+	    }
 	}
 
 }

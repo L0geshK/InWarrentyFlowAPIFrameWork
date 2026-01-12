@@ -36,7 +36,7 @@ public class HikariCPConn {
 				System.out.println(rs.getString("first_name")+" "+rs.getString("last_name")+" "+rs.getString("mobile_number"));
 			}
 			
-		} catch (IOException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {

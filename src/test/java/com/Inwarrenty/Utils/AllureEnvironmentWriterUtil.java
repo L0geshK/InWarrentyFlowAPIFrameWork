@@ -20,12 +20,7 @@ public class AllureEnvironmentWriterUtil {
 		Properties prop = new Properties();
 		prop.setProperty("Project Name", "Phoenix Test Automation Framework");
 		prop.setProperty("Env", ConfigManager.env);
-		try {
-			prop.setProperty("BASE_URI", ConfigManager.getProperty("BASE_URL"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		prop.setProperty("BASE_URI", ConfigManager.getProperty("BASE_URL"));
 		prop.setProperty("Operating System", System.getProperty("os.name"));
 		prop.setProperty("Operating System Version", System.getProperty("os.version"));
 		prop.setProperty("Java Version", System.getProperty("java.version"));
