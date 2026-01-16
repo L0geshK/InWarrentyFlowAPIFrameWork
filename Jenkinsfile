@@ -21,27 +21,27 @@ pipeline {
 
                 stage("QA Suite") {
                     steps {
-                        sh """
-                        docker run --rm \
-                        -v \$(pwd)/target:/app/target \
-                        inwarrenty-api-tests \
-                        test -DsuiteXmlFile=testng.xml \
-                             -Denv=qa \
-                             -Dallure.results.directory=target/allure-results-qa
-                        """
+                       sh """
+docker run --rm \
+  -v "\$WORKSPACE/target:/app/target" \
+  inwarrenty-api-tests \
+  mvn test -DsuiteXmlFile=testng.xml -Denv=qa \
+  -Dallure.results.directory=target/allure-results-qa
+"""
+
                     }
                 }
 
                 stage("DEV Suite") {
                     steps {
                         sh """
-                        docker run --rm \
-                        -v \$(pwd)/target:/app/target \
-                        inwarrenty-api-tests \
-                        test -DsuiteXmlFile=testng.xml \
-                             -Denv=dev \
-                             -Dallure.results.directory=target/allure-results-dev
-                        """
+docker run --rm \
+  -v "\$WORKSPACE/target:/app/target" \
+  inwarrenty-api-tests \
+  mvn test -DsuiteXmlFile=testng.xml -Denv=dev \
+  -Dallure.results.directory=target/allure-results-dev
+"""
+
                     }
                 }
             }
